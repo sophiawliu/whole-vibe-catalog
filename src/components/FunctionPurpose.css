@@ -1,0 +1,77 @@
+.FunctionPurpose {
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+}
+h1 {
+    font-family: Windsor;
+    font-size: 28px;
+}
+.black-header {
+    color: black;
+}
+.page.white {
+    background-color: white;
+}
+.page.white * {
+    background-color: white;
+}
+.univers-reg {
+    font-family: Univers Regular;
+    font-size: 14px;
+    color: black;
+}
+.corner-buttons-container {
+    background-color: #70adbf00;
+}
+.corner-buttons {
+    width: calc(100vw - 30px);
+    height: calc(100vh - 30px);
+    display: flex;
+    position: absolute;
+    background-color: #70adbf00;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+.corner-button.black {
+    font-family: Univers Bold;
+    margin: 0 0;
+    background-color: #70adbf00;
+    color: #00000089;
+    cursor: pointer;
+    height: fit-content;
+    width: fit-content;
+}
+.corner-button.top-left {
+    width: 50%;
+}
+.corner-button.top-right {
+    margin-left: auto;
+    text-align: right;
+}
+.corner-button.bottom-left {
+    width: 50%;
+    margin-top: auto;
+}
+.corner-button.bottom-right {
+    margin-left: auto;
+    margin-top: auto;
+    text-align: right;
+}
+.corner-button.black:hover {
+    color: black;
+}
+@font-face {
+    font-family: Windsor;
+    src: url(../fonts/Windsor\ Regular.ttf);
+}
+
+@font-face {
+    font-family: Univers Regular;
+    src: url(../fonts/univers/UniversRegular.ttf);
+}
+
+@font-face {
+    font-family: Univers Bold;
+    src: url(../fonts/univers/UniversBold.ttf);
+}
