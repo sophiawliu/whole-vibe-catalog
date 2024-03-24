@@ -1,4 +1,4 @@
-# WHOLE VIBE CATALOG
+# 🌍 WHOLE VIBE CATALOG
 Because you're living in your own Whole Earth Catalog. An application dedicated to the study of Vibeology™️.
 
 
