@@ -1,3 +1,10 @@
+# WHOLE VIBE CATALOG
+Because you're living in your own Whole Earth Catalog. An application dedicated to the study of Vibeology™️.
+
+
+
+***
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
