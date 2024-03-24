@@ -1,6 +1,7 @@
 # 🌍 WHOLE VIBE CATALOG
 Because you're living in your own Whole Earth Catalog. An application dedicated to the study of Vibeology™️.
 
+![wholeearthcatalog-960x1236](https://github.com/sophiawliu/whole-vibe-catalog/assets/122403050/d0a979e4-ea14-40cb-9770-2decc91d2b9a)
 
 
 ***
