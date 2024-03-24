@@ -1,9 +1,18 @@
 import './FunctionPurpose.css';
 import {removeElementByClass, renderElement, getElement} from './LogIn';
+import Cover from './Cover';
+import { handleLogOut } from './Cover';
 import * as ReactDOM from 'react-dom';
 
 function handleNext() {
     removeElementByClass("FunctionPurpose");
+}
+
+function handleCover() {
+    removeElementByClass("FunctionPurpose");
+    const app = getElement("App");
+    const cover = <Cover></Cover>;
+    renderElement(app, cover);
 }
 
 function FunctionPurpose() {
@@ -26,10 +35,10 @@ function FunctionPurpose() {
             </div>
             <div class="corner-buttons-container black">
                 <div className='corner-buttons black'>
-                    <div className='corner-button black top-left'>LOG OUT</div>
+                    <div className='corner-button black top-left' onClick={handleLogOut}>LOG OUT</div>
                     <div className='corner-button black top-right'>INDEX</div>
-                    <div className='corner-button black bottom-left'>◀︎ BACK</div>
-                    <div className='corner-button black bottom-right' onClick={handleNext}>NEXT ▶</div>
+                    <div className='corner-button black bottom-left' onClick={handleCover}>◀︎ COVER</div>
+                    <div className='corner-button black bottom-right' onClick={handleNext}>HOME ▶</div>
                 </div>
             </div>
         </div>

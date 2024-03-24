@@ -1,5 +1,6 @@
 import './Cover.css';
 import {removeElementByClass, renderElement, getElement} from './LogIn';
+import LogIn from './LogIn';
 import FunctionPurpose from './FunctionPurpose';
 import * as ReactDOM from 'react-dom';
 
@@ -9,6 +10,14 @@ function handleEnter() {
     const funcPurp = <FunctionPurpose></FunctionPurpose>;
     renderElement(app, funcPurp);
 }
+
+export function handleLogOut() {
+    removeElementByClass("Cover");
+    const app = getElement("App");
+    const logIn = <LogIn></LogIn>;
+    renderElement(app, logIn);
+}
+
 function Cover() {
     return (
     <div className="Cover">
@@ -25,10 +34,10 @@ function Cover() {
         </div>
         <div class="corner-buttons-container">
             <div className='corner-buttons'>
-                <div className='corner-button top-left'>LOG OUT</div>
+                <div className='corner-button top-left' onClick={handleLogOut}>LOG OUT</div>
                 <div className='corner-button top-right'>INDEX</div>
                 <div className='corner-button bottom-left'></div>
-                <div className='corner-button bottom-right' onClick={handleEnter}>ENTER ▶</div>
+                <div className='corner-button bottom-right' onClick={handleEnter}>OPEN ▶</div>
             </div>
         </div>
     </div>
