@@ -23,7 +23,7 @@ function showMenu() {
             <div className='corner-buttons black'>
                 <div className='corner-button black top-left' onClick={handleLogOut}>LOG OUT</div>
                 <div className='corner-button black top-right' onClick={handleIndex}>⏺ INDEX</div>
-                <div className='corner-button black bottom-left' onClick={handleFunctionPurpose}>◀︎ FUNCTION-PURPOSE</div>
+                <div className='corner-button black bottom-left' onClick={handleFunctionPurpose}>◀︎ FUNCTION/PURPOSE</div>
                 <div className='corner-button black bottom-right'></div>
             </div>
         </div>
@@ -53,7 +53,7 @@ function Index() {
                         <div className='corner-buttons black'>
                             <div className='corner-button black top-left' onClick={handleLogOut}>LOG OUT</div>
                             <div className='corner-button black top-right' onClick={handleIndex}>⏺ INDEX</div>
-                            <div className='corner-button black bottom-left' onClick={handleFunctionPurpose}>◀︎ FUNCTION-PURPOSE</div>
+                            <div className='corner-button black bottom-left' onClick={handleFunctionPurpose}>◀︎ FUNCTION/PURPOSE</div>
                             <div className='corner-button black bottom-right'></div>
                         </div>
                     </div>
