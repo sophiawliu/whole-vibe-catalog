@@ -31,6 +31,7 @@ function showMenu() {
                 <div className='corner-button bottom-right' onClick={handleEnter}>OPEN ▶</div>
             </div>
         </div>
+        <div className='edit' onClick={openEdit} title="Edit catalog">✎</div>
     </div>
     const menuContainer = getElement("menu-container");
     renderElement(menuContainer, menuSubcontainer);
@@ -52,6 +53,10 @@ export function handleIndex() {
     renderElement(app, index);
 }
 
+export function openEdit() {
+
+}
+
 function Cover() {
     return (
     <div className="Cover">
@@ -69,15 +74,16 @@ function Cover() {
         <div className='menu-container'>
             <div className='menu-subcontainer'>
                 <div className='show-menu' onClick={hideMenu} title="Hide menu">✦</div>
-                    <div class="corner-buttons-container">
-                        <div className='corner-buttons'>
-                            <div className='corner-button top-left' onClick={handleLogOut}>LOG OUT</div>
-                            <div className='corner-button top-right' onClick={handleIndex}>⏺ INDEX</div>
-                            <div className='corner-button bottom-left'></div>
-                            <div className='corner-button bottom-right' onClick={handleEnter}>OPEN ▶</div>
-                        </div>
+                <div class="corner-buttons-container">
+                    <div className='corner-buttons'>
+                        <div className='corner-button top-left' onClick={handleLogOut}>LOG OUT</div>
+                        <div className='corner-button top-right' onClick={handleIndex}>⏺ INDEX</div>
+                        <div className='corner-button bottom-left'></div>
+                        <div className='corner-button bottom-right' onClick={handleEnter}>OPEN ▶</div>
                     </div>
                 </div>
+                <div className='edit' onClick={openEdit} title="Edit catalog">✎</div>
+            </div>
         </div>
     </div>
   );

@@ -13,13 +13,19 @@ h1 {
 }
 .page.white {
     background-color: white;
-    width: 406px;
+    width: 423px;
 }
 .page.white * {
     background-color: white;
 }
 .univers-reg {
     font-family: Univers Regular;
+    font-size: 14px;
+    color: black;
+    font-style: italic;
+}
+.univers-bold {
+    font-family: Univers Bold;
     font-size: 14px;
     color: black;
     font-style: italic;
@@ -79,6 +85,13 @@ ol {
     color: #0000006e;
 }
 .show-menu.black:hover {
+    color: black;
+}
+.edit.black {
+    background-color: white;
+    color: #0000006e;
+}
+.edit.black:hover {
     color: black;
 }
 @font-face {

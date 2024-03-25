@@ -1,6 +1,6 @@
 import './Index.css';
 import {removeElementByClass, renderElement, getElement} from './LogIn';
-import { handleLogOut, handleIndex } from './Cover';
+import { handleLogOut, handleIndex, openEdit } from './Cover';
 import * as ReactDOM from 'react-dom';
 import FunctionPurpose from './FunctionPurpose';
 
@@ -23,10 +23,11 @@ function showMenu() {
             <div className='corner-buttons black'>
                 <div className='corner-button black top-left' onClick={handleLogOut}>LOG OUT</div>
                 <div className='corner-button black top-right' onClick={handleIndex}>⏺ INDEX</div>
-                <div className='corner-button black bottom-left' onClick={handleFunctionPurpose}>◀︎ FUNCTION/PURPOSE</div>
+                <div className='corner-button black bottom-left' onClick={handleFunctionPurpose}>◀︎ F / P</div>
                 <div className='corner-button black bottom-right'></div>
             </div>
         </div>
+        <div className='edit' onClick={openEdit} title="Edit catalog">✎</div>
     </div>
     const menuContainer = getElement("menu-container");
     renderElement(menuContainer, menuSubcontainer);
@@ -53,10 +54,11 @@ function Index() {
                         <div className='corner-buttons black'>
                             <div className='corner-button black top-left' onClick={handleLogOut}>LOG OUT</div>
                             <div className='corner-button black top-right' onClick={handleIndex}>⏺ INDEX</div>
-                            <div className='corner-button black bottom-left' onClick={handleFunctionPurpose}>◀︎ FUNCTION/PURPOSE</div>
+                            <div className='corner-button black bottom-left' onClick={handleFunctionPurpose}>◀︎ F / P</div>
                             <div className='corner-button black bottom-right'></div>
                         </div>
                     </div>
+                    <div className='edit black' onClick={openEdit} title="Edit catalog">✎</div>
                 </div>
             </div>
         </div>
