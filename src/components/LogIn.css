@@ -6,7 +6,7 @@ body {
     color: white;
 }
 .page {
-    width: 520px;
+    width: 500px;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -95,7 +95,7 @@ input {
     background-color:#70ACBF;
     border: 2px solid #96c2cf;
     border-radius: 2px;
-    font-family: Univers Regular;
+    font-family: Univers Bold;
     font-size: 14px;
     height: 26px;
     width: 70px;

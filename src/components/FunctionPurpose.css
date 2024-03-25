@@ -13,6 +13,7 @@ h1 {
 }
 .page.white {
     background-color: white;
+    width: 406px;
 }
 .page.white * {
     background-color: white;
@@ -23,6 +24,16 @@ h1 {
     color: black;
     font-style: italic;
 }
+ol {
+    counter-reset: list;
+  }
+  ol > li {
+    list-style: none;
+  }
+  ol > li:before {
+    content: counter(list, decimal) ") ";
+    counter-increment: list;
+  }
 .corner-buttons-container {
     background-color: #70adbf00;
 }
@@ -61,6 +72,13 @@ h1 {
     text-align: right;
 }
 .corner-button.black:hover {
+    color: black;
+}
+.show-menu.black {
+    background-color: white;
+    color: #0000006e;
+}
+.show-menu.black:hover {
     color: black;
 }
 @font-face {

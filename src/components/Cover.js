@@ -3,6 +3,7 @@ import {removeElementByClass, renderElement, getElement} from './LogIn';
 import LogIn from './LogIn';
 import FunctionPurpose from './FunctionPurpose';
 import * as ReactDOM from 'react-dom';
+import Index from './Index';
 
 function handleEnter() {
     removeElementByClass("Cover");
@@ -16,6 +17,39 @@ export function handleLogOut() {
     const app = getElement("App");
     const logIn = <LogIn></LogIn>;
     renderElement(app, logIn);
+}
+
+function showMenu() {
+    removeElementByClass("menu-subcontainer");
+    const menuSubcontainer = <div className='menu-subcontainer'>
+        <div className='show-menu' onClick={hideMenu} title="Hide menu">✦</div>
+        <div class="corner-buttons-container">
+            <div className='corner-buttons'>
+                <div className='corner-button top-left' onClick={handleLogOut}>LOG OUT</div>
+                <div className='corner-button top-right' onClick={handleIndex}>⏺ INDEX</div>
+                <div className='corner-button bottom-left'></div>
+                <div className='corner-button bottom-right' onClick={handleEnter}>OPEN ▶</div>
+            </div>
+        </div>
+    </div>
+    const menuContainer = getElement("menu-container");
+    renderElement(menuContainer, menuSubcontainer);
+}
+
+function hideMenu() {
+    removeElementByClass("show-menu");
+    const menuSubcontainer = <div className='menu-subcontainer'>
+            <div className='show-menu' onClick={showMenu} title="Show menu">✧</div>
+    </div>;
+    const menuContainer = getElement("menu-container");
+    renderElement(menuContainer, menuSubcontainer);
+}
+
+export function handleIndex() {
+    removeElementByClass("FunctionPurpose");
+    const app = getElement("App");
+    const index = <Index></Index>;
+    renderElement(app, index);
 }
 
 function Cover() {
@@ -32,13 +66,18 @@ function Cover() {
                 <h3>$0</h3>
             </div>
         </div>
-        <div class="corner-buttons-container">
-            <div className='corner-buttons'>
-                <div className='corner-button top-left' onClick={handleLogOut}>LOG OUT</div>
-                <div className='corner-button top-right'>INDEX</div>
-                <div className='corner-button bottom-left'></div>
-                <div className='corner-button bottom-right' onClick={handleEnter}>OPEN ▶</div>
-            </div>
+        <div className='menu-container'>
+            <div className='menu-subcontainer'>
+                <div className='show-menu' onClick={hideMenu} title="Hide menu">✦</div>
+                    <div class="corner-buttons-container">
+                        <div className='corner-buttons'>
+                            <div className='corner-button top-left' onClick={handleLogOut}>LOG OUT</div>
+                            <div className='corner-button top-right' onClick={handleIndex}>⏺ INDEX</div>
+                            <div className='corner-button bottom-left'></div>
+                            <div className='corner-button bottom-right' onClick={handleEnter}>OPEN ▶</div>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
   );
