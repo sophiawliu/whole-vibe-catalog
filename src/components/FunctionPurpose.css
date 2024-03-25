@@ -8,6 +8,7 @@ h1 {
     font-size: 28px;
 }
 .black-header {
+    text-align: left;
     color: black;
 }
 .page.white {
@@ -20,6 +21,7 @@ h1 {
     font-family: Univers Regular;
     font-size: 14px;
     color: black;
+    font-style: italic;
 }
 .corner-buttons-container {
     background-color: #70adbf00;

@@ -23,9 +23,9 @@ function FunctionPurpose() {
                 <p class="univers-reg">The WHOLE VIBE CATALOG functions as a curation and organization device. With it, the user should know better what is vibey and where and how those vibes come together.</p>
                 <p class="univers-reg">An item is listed in the CATALOG if it is deemed:</p>
                 <ol class="univers-reg">
-                    <li class="univers-reg">Aesthetic as a medium,</li>
+                    <li class="univers-reg">Aesthetic as a vibe medium,</li>
                     <li class="univers-reg">Relevant to cultural education,</li>
-                    <li class="univers-reg">High or low in popularity,</li>
+                    <li class="univers-reg">High or low in popularity and coolness,</li>
                     <li class="univers-reg">Central to the user's favorite things,</li>
                     <li class="univers-reg">Easily vibed to.</li>
                 </ol>
