@@ -25,7 +25,7 @@ function LogIn() {
     return (
     <div className="LogIn">
         <div className="page">
-            <h1>WHOLE VIBE CATALOG</h1>
+            <h1 className='wvc'>WHOLE VIBE CATALOG</h1>
             <h2>access to cools</h2>
             <div className="login">
                 <div className="blue-earth">

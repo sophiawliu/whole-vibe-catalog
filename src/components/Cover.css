@@ -6,7 +6,7 @@ body {
     color: white;
 }
 .page {
-    width: 440px;
+    width: 520px;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -15,9 +15,9 @@ body {
     text-align: justify;
     z-index: 1000;
 }
-h1 {
+.wvc {
     font-family: Windsor;
-    font-size: 40px;
+    font-size: 38px;
     text-align: center;
     margin-top: 0;
 }
@@ -29,18 +29,18 @@ h2 {
 }
 h3 {
     font-family: Windsor;
-    font-size: 20px;
-    margin: 0 0;
+    font-size: 22px;
+    margin: 0 0 10px 0;
 }
 .earth {
-    width: 350px;
-    height: 350px;
+    width: 360px;
+    height: 360px;
     background-image: url(../images/earth.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     border-radius: 100%;
-    margin: 3vh 0 7vh 0;
+    margin: 4vh 0 10vh 0;
     display: flex;
     align-items: center;
     justify-content: center;

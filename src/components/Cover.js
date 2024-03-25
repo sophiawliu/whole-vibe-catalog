@@ -22,7 +22,7 @@ function Cover() {
     return (
     <div className="Cover">
         <div className="page">
-        <h1>WHOLE VIBE CATALOG</h1>
+        <h1 className='wvc'>WHOLE VIBE CATALOG</h1>
             <h2>access to cools</h2>
             <div className="login">
                 <div className="earth"></div>
