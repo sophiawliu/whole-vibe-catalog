@@ -48,14 +48,15 @@ function hideMenu() {
 }
 
 export function handleIndex() {
-    removeElementByClass("FunctionPurpose");
     const app = getElement("App");
     const index = <Index></Index>;
     renderElement(app, index);
 }
 
 export function openEdit() {
-    
+    const app = getElement("App");
+    const edit = <Edit></Edit>;
+    renderElement(app, edit);
 }
 
 function Cover() {

@@ -1,4 +1,4 @@
-import './Cover.css';
+import './Edit.css';
 import {removeElementByClass, renderElement, getElement} from './LogIn';
 import LogIn from './LogIn';
 import FunctionPurpose from './FunctionPurpose';
@@ -37,11 +37,20 @@ export function handleIndex() {
     renderElement(app, index);
 }
 
+export function openReadMode() {
+    handleIndex();
+}
+
 function Edit() {
     return (
     <div className="Edit">
-        <div className="page">
-
+        <div className='menu-container-index'>
+            <div className='menu-subcontainer'>
+                <div className='show-menu black' onClick={hideMenu} title="Hide menu">✦</div>
+                <div className='corner-button black top-left' onClick={handleLogOut}>LOG OUT</div>
+                <div className='corner-button black top-right' onClick={handleIndex}>⏺ INDEX</div>
+                <div className='book-icon' title='Read catalog' onClick={openReadMode}></div>
+            </div>
         </div>
     </div>
   );

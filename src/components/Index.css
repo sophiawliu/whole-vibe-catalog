@@ -25,7 +25,7 @@
     cursor: pointer;
 }
 .vibe-bar:hover {
-    background-color:aqua;
+    background-color:darkturquoise;
 }
 .vibe-title {
     width: 100vw;
@@ -40,6 +40,10 @@
 .menu-container-index {
     position: sticky;
     top: 0;
+}
+.corner-button.black.bottom-left {
+    top: calc(100vh - 15px);
+    left: 15px;
 }
 .edit-black-index {
     position:absolute;

@@ -1,0 +1,21 @@
+.Edit {
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+}
+.book-icon {
+    height: 22px;
+    width: 22px;
+    background-image: url(../images/book.png);
+    background-size: contain;
+    position:absolute;
+    cursor: pointer;
+    left: 50%;
+    top: calc(100vh - 43px);
+    z-index: 1000;
+    background-color: rgba(240, 248, 255, 0);
+    opacity: 0.4;
+}
+.book-icon:hover {
+    opacity: 1;
+}
