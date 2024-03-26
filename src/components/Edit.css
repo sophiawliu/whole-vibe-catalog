@@ -11,7 +11,7 @@
     position:absolute;
     cursor: pointer;
     left: 50%;
-    top: calc(100vh - 43px);
+    top: calc(100vh - 40px);
     z-index: 1000;
     background-color: rgba(240, 248, 255, 0);
     opacity: 0.4;
