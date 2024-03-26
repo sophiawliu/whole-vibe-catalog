@@ -21,7 +21,7 @@ body {
     text-align: center;
     margin-top: 0;
 }
-h2 {
+.access-to {
     font-family: Univers Cn Regular;
     font-style: italic;
     font-size: 20px;
@@ -102,7 +102,7 @@ a {
     color: white;
 }
 .edit {
-    position: absolute;
+    position:absolute;
     color: #ffffff89;
     cursor: pointer;
     left: 50%;

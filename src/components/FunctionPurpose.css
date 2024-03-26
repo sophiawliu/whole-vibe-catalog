@@ -39,7 +39,7 @@ ol {
   ol > li:before {
     content: counter(list, decimal) ") ";
     counter-increment: list;
-  }
+}
 .corner-buttons-container {
     background-color: #70adbf00;
 }
@@ -81,14 +81,14 @@ ol {
     color: black;
 }
 .show-menu.black {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
     color: #0000006e;
 }
 .show-menu.black:hover {
     color: black;
 }
 .edit.black {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
     color: #0000006e;
 }
 .edit.black:hover {

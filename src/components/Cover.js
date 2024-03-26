@@ -4,6 +4,7 @@ import LogIn from './LogIn';
 import FunctionPurpose from './FunctionPurpose';
 import * as ReactDOM from 'react-dom';
 import Index from './Index';
+import Edit from './Edit';
 
 function handleEnter() {
     removeElementByClass("Cover");
@@ -54,7 +55,7 @@ export function handleIndex() {
 }
 
 export function openEdit() {
-
+    
 }
 
 function Cover() {
@@ -62,7 +63,7 @@ function Cover() {
     <div className="Cover">
         <div className="page">
         <h1 className='wvc'>WHOLE VIBE CATALOG</h1>
-            <h2>access to cools</h2>
+            <h2 className='access-to'>access to cools</h2>
             <div className="login">
                 <div className="earth"></div>
             </div>

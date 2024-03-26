@@ -24,7 +24,7 @@ function showMenu() {
                 <div className='corner-button black bottom-right' onClick={handleIndex}>INDEX ▶</div>
             </div>
         </div>
-        <div className='edit' onClick={openEdit} title="Edit catalog">✎</div>
+        <div className='edit black' onClick={openEdit} title="Edit catalog">✎</div>
     </div>
     const menuContainer = getElement("menu-container");
     renderElement(menuContainer, menuSubcontainer);
@@ -47,11 +47,11 @@ function FunctionPurpose() {
                 <p class="univers-reg">Your own WHOLE VIBE CATALOG functions as a curation and organization device. With it, the user should know better what is vibey and where and how those vibes come together.</p>
                 <p class="univers-reg">Items are listed in the CATALOG if they are deemed:</p>
                 <ol class="univers-reg">
-                    <li class="univers-reg"><span class="univers-bold">E</span>asily vibed to.</li>
-                    <li class="univers-reg"><span class="univers-bold">A</span>esthetic as media,</li>
-                    <li class="univers-reg"><span class="univers-bold">R</span>elevant to cultural education,</li>
-                    <li class="univers-reg"><span class="univers-bold">T</span>he user's favorite things,</li>
-                    <li class="univers-reg"><span class="univers-bold">H</span>igh or low in popularity or coolness,</li>
+                    <li class="univers-reg">Easily vibed to.</li>
+                    <li class="univers-reg">Aesthetic as media,</li>
+                    <li class="univers-reg">Relevant to cultural education,</li>
+                    <li class="univers-reg">The user's favorite things,</li>
+                    <li class="univers-reg">High or low in popularity or coolness,</li>
                 </ol>
                 <p class="univers-reg">This information is continually revised according to the experience of the naturally intelligent CATALOG user.</p><br></br>
                 <h1 class="black-header">PURPOSE</h1>

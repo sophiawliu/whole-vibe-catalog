@@ -26,7 +26,7 @@ function LogIn() {
     <div className="LogIn">
         <div className="page">
             <h1 className='wvc'>WHOLE VIBE CATALOG</h1>
-            <h2>access to cools</h2>
+            <h2 className='access-to'>access to cools</h2>
             <div className="login">
                 <div className="blue-earth">
                     <h3 className="login-word">Log In</h3>
