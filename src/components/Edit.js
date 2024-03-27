@@ -37,20 +37,50 @@ export function handleIndex() {
     renderElement(app, index);
 }
 
-export function openReadMode() {
-    handleIndex();
+function closeEdit() {
+
 }
 
 function Edit() {
     return (
     <div className="Edit">
-        <div className='menu-container-index'>
-            <div className='menu-subcontainer'>
-                <div className='show-menu black' onClick={hideMenu} title="Hide menu">✦</div>
-                <div className='corner-button black top-left' onClick={handleLogOut}>LOG OUT</div>
-                <div className='corner-button black top-right' onClick={handleIndex}>⏺ INDEX</div>
-                <div className='book-icon' title='Read catalog' onClick={openReadMode}></div>
-            </div>
+        <div className='index-page-center'>
+            <form className='upload-form'>
+                <h1 className='upload-new-cool'>Upload New Cool</h1>
+                {/* <div className='x-button' onClick={closeEdit}>
+                    <div className='x'>x</div>
+                </div> */}
+                <div className='inputs'>
+                    <form className='upload-new-cool'>
+                        <div className='input-section'>
+                            <label className='upload-new-label' for="upload-image">UPLOAD IMAGE</label>
+                            <input className='upload-new-input' id='upload-image' name='upload-image' type='file'></input>
+                        </div>
+                        <div className='input-section'>
+                            <label className='upload-new-label' for="vibe-dropdown">VIBE</label>
+                            <select id='vibe-dropdown' name='vibe-dropdown'>
+                                <option value='eighties'>'80s On The Water</option>
+                                <option value='crybaby'>Crybaby Greaser</option>
+                                <option value='womyns'>Womyn's Folk</option>
+                                <option value='austin'>Austin Powers x '60s Mod</option>
+                                <option value='pc'>PC Revolution</option>
+                                <option value='cowboy'>Cowboy Western</option>
+                            </select>
+                        </div>
+                        <div className='input-section'>
+                            <label className='upload-new-label' for="cool-description">DESCRIPTION</label>
+                            <textarea className='upload-new-input' id='cool-description' name='cool-description' rows={3}></textarea>
+                        </div>
+                        <div className='input-section'>
+                            <label className='upload-new-label' for="cool-description">TAGS</label>
+                            {/* tagify later */}
+                            <input className='upload-new-input' name='tags'></input>
+                        </div>
+                    </form>
+                </div>
+                <button className='upload-button' type='submit'>UPLOAD</button>
+                <div className='close' onClick={closeEdit}>Close</div>
+            </form>
         </div>
     </div>
   );

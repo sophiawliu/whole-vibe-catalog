@@ -24,7 +24,7 @@ function showMenu() {
                 <div className='corner-button black bottom-right' onClick={handleIndex}>INDEX ▶</div>
             </div>
         </div>
-        <div className='edit black' onClick={openEdit} title="Edit catalog">✎</div>
+        <div className='edit black' title="Edit catalog">✎</div>
     </div>
     const menuContainer = getElement("menu-container");
     renderElement(menuContainer, menuSubcontainer);
@@ -68,7 +68,7 @@ function FunctionPurpose() {
                             <div className='corner-button black bottom-right' onClick={handleIndex}>INDEX ▶</div>
                         </div>
                     </div>
-                    <div className='edit black' onClick={openEdit} title="Edit catalog">✎</div>
+                    <div className='edit black' title="Edit catalog">✎</div>
                 </div>
             </div>
         </div>

@@ -32,7 +32,7 @@ function showMenu() {
                 <div className='corner-button bottom-right' onClick={handleEnter}>OPEN ▶</div>
             </div>
         </div>
-        <div className='edit' onClick={openEdit} title="Edit catalog">✎</div>
+        <div className='edit' title="Edit catalog">✎</div>
     </div>
     const menuContainer = getElement("menu-container");
     renderElement(menuContainer, menuSubcontainer);
@@ -84,7 +84,7 @@ function Cover() {
                         <div className='corner-button bottom-right' onClick={handleEnter}>OPEN ▶</div>
                     </div>
                 </div>
-                <div className='edit' onClick={openEdit} title="Edit catalog">✎</div>
+                <div className='edit' title="Edit catalog">✎</div>
             </div>
         </div>
     </div>
