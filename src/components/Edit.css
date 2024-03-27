@@ -25,7 +25,7 @@
     background-color: white;
     margin: 0 0 2vh 0;
     font-family: Windsor;
-    font-size: 40px;
+    font-size: 30px;
     color: black;
     display: flex;
     flex-direction: column;
@@ -126,34 +126,3 @@ select {
 .close:hover {
     color: indianred;
 }
-/* .x-button {
-    position:absolute;
-    cursor: pointer;
-    right: 15px;
-    z-index: 1000;
-    width: 50px;
-    height: 50px;
-    border-radius: 1000px;
-    background-color: white;
-    border: 2px solid #0000006e;
-    top: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.x-button:hover {
-    background-color: #70ACBF;
-    border-color: #70ACBF;
-}
-.x-button:hover .x {
-    color: #70ACBF;
-}
-.x {
-    background-color: #70adbf00;
-    color: #0000006e;
-    font-size: 40px;
-    margin: 0 0;
-    padding: 0 0;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight:100;
-} */

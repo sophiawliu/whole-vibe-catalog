@@ -4,6 +4,7 @@ import Cover from './Cover';
 import { handleLogOut, handleIndex, openEdit } from './Cover';
 import * as ReactDOM from 'react-dom';
 import Home from './Index';
+import Edit from './Edit';
 
 function handleCover() {
     removeElementByClass("FunctionPurpose");
@@ -20,11 +21,12 @@ function showMenu() {
             <div className='corner-buttons black'>
                 <div className='corner-button black top-left' onClick={handleLogOut}>LOG OUT</div>
                 <div className='corner-button black top-right' onClick={handleIndex}>⏺ INDEX</div>
-                <div className='corner-button black bottom-left' onClick={handleCover}>◀︎ COVER</div>
-                <div className='corner-button black bottom-right' onClick={handleIndex}>INDEX ▶</div>
+                <div className='corner-button black bottom-left' onClick={handleIndex}>→</div>
+                <div className='corner-button black bottom-right' onClick={handleCover}>←</div>
             </div>
         </div>
-        <div className='edit black' title="Edit catalog">✎</div>
+        {/* <div className='edit black' title="Edit catalog">✎</div> */}
+        <Edit></Edit>
     </div>
     const menuContainer = getElement("menu-container");
     renderElement(menuContainer, menuSubcontainer);
@@ -64,11 +66,12 @@ function FunctionPurpose() {
                         <div className='corner-buttons black'>
                             <div className='corner-button black top-left' onClick={handleLogOut}>LOG OUT</div>
                             <div className='corner-button black top-right' onClick={handleIndex}>⏺ INDEX</div>
-                            <div className='corner-button black bottom-left' onClick={handleCover}>◀︎ COVER</div>
-                            <div className='corner-button black bottom-right' onClick={handleIndex}>INDEX ▶</div>
+                            <div className='corner-button black bottom-left' onClick={handleIndex}>→</div>
+                            <div className='corner-button black bottom-right' onClick={handleCover}>←</div>
                         </div>
                     </div>
-                    <div className='edit black' title="Edit catalog">✎</div>
+                    {/* <div className='edit black' title="Edit catalog">✎</div> */}
+                    <Edit></Edit>
                 </div>
             </div>
         </div>

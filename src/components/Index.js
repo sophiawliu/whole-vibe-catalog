@@ -24,11 +24,9 @@ function showMenu() {
         <div className='show-menu black' onClick={hideMenu} title="Hide menu">✦</div>
         <div className='corner-button black top-left' onClick={handleLogOut}>LOG OUT</div>
         <div className='corner-button black top-right' onClick={handleIndex}>⏺ INDEX</div>
-        <div className='corner-button white bottom-left' onClick={handleFunctionPurpose}>◀︎ F / P</div>
-        <div className='corner-button black bottom-right'></div>
-        <div className='edit-black-index' onClick={openEdit} title="Upload new cool">
-            <div className='plus'>+</div>
-        </div>
+        <div className='corner-button white bottom-left' onClick={handleFunctionPurpose}></div>
+        <div className='corner-button white bottom-right' onClick={handleFunctionPurpose}>←</div>
+        <Edit></Edit>
     </div>
     const menuContainer = getElement("menu-container-index");
     renderElement(menuContainer, menuSubcontainer);
@@ -46,7 +44,7 @@ function Index() {
     return (
         <div className="Index">
             <div className='index-page'>
-                <h1 className='page-title'>Index</h1>
+                <h1 className='page-title'>INDEX</h1>
                 <div className='vibe-bar'>
                     <div className='vibe-title'>'80s On The Water</div>
                 </div>
@@ -72,11 +70,9 @@ function Index() {
                     <div className='show-menu black' onClick={hideMenu} title="Hide menu">✦</div>
                     <div className='corner-button black top-left' onClick={handleLogOut}>LOG OUT</div>
                     <div className='corner-button black top-right' onClick={handleIndex}>⏺ INDEX</div>
-                    <div className='corner-button white bottom-left' onClick={handleFunctionPurpose}>◀︎ F / P</div>
-                    <div className='corner-button black bottom-right'></div>
-                    
+                    <div className='corner-button white bottom-left' onClick={handleFunctionPurpose}></div>
+                    <div className='corner-button white bottom-right' onClick={handleFunctionPurpose}>←</div>
                     <Edit></Edit>
-
                 </div>
             </div>
         </div>

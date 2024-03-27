@@ -13,7 +13,6 @@ body {
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
     text-align: justify;
-    z-index: 1000;
 }
 .wvc {
     font-family: Windsor;
@@ -81,12 +80,14 @@ a {
     right: 15px;
 }
 .corner-button.bottom-left {
+    font-size: 30px;
     bottom: 15px;
-    left: 15px;
+    left: calc(50% + 2px);
 }
 .corner-button.bottom-right {
+    font-size: 30px;
     bottom: 15px;
-    right: 15px;
+    right: calc(50% + 2px);
 }
 .corner-button:hover {
     color: white;
@@ -98,7 +99,7 @@ a {
     left: 50%;
     top: 15px;
     z-index: 1000;
-    font-size: 22px;
+    font-size: 26px;
 }
 .show-menu:hover {
     color: white;
