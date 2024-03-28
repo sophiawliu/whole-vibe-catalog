@@ -21,7 +21,45 @@ function handleLogIn() {
     const cover = <Cover></Cover>;
     renderElement(app, cover);
 }
-function LogIn() {
+function switchToLogIn() {
+    const login = <div className='login-or-signup'>
+        <h3 className="login-word">Log In</h3>
+        <form>
+            <label for="email">EMAIL ADDRESS</label><br></br>
+            <input type="email" id="email" name="email"></input><br></br>
+            <label for="password">PASSWORD</label><br></br>
+            <input type="password" id="password" name="password"></input><br></br>
+            <div className="submit-container">
+                <input className="submit" type="submit" value="LOG IN" onClick={handleLogIn}></input>
+            </div>
+            <div className='already-have'>New user? <span className='switch-to-login' onClick={switchToSignUp}>Sign Up</span></div>
+        </form>
+    </div>
+    removeElementByClass('login-or-signup');
+    const blueEarth = getElement('blue-earth');
+    renderElement(blueEarth, login);
+}
+
+function switchToSignUp() {
+    const signup = <div className='login-or-signup'>
+        <h3 className="login-word">Sign Up</h3>
+        <form>
+            <label for="email">EMAIL ADDRESS</label><br></br>
+            <input type="email" id="email" name="email"></input><br></br>
+            <label for="password">PASSWORD</label><br></br>
+            <input type="password" id="password" name="password"></input><br></br>
+            <div className="submit-container">
+                <input className="submit" type="submit" value="SIGN UP" onClick={handleLogIn}></input>
+            </div>
+            <div className='already-have'>Returning user? <span className='switch-to-login' onClick={switchToLogIn}>Log In</span></div>
+        </form>
+    </div>
+    removeElementByClass('login-or-signup');
+    const blueEarth = getElement('blue-earth');
+    renderElement(blueEarth, signup);
+}
+
+export default function LogIn() {
     return (
     <div className="LogIn">
         <div className="page">
@@ -29,16 +67,19 @@ function LogIn() {
             <h2 className='access-to'>access to cools</h2>
             <div className="login">
                 <div className="blue-earth">
-                    <h3 className="login-word">Log In</h3>
-                    <form>
-                        <label for="username">USERNAME</label><br></br>
-                        <input type="text" id="username" name="username"></input><br></br>
-                        <label for="password">PASSWORD</label><br></br>
-                        <input type="password" id="password" name="password"></input><br></br>
-                        <div className="submit-container">
-                            <input className="submit" type="submit" value="LOG IN" onClick={handleLogIn}></input>
-                        </div>
-                    </form>
+                    <div className='login-or-signup'>
+                        <h3 className="login-word">Log In</h3>
+                        <form>
+                            <label for="email">EMAIL ADDRESS</label><br></br>
+                            <input type="email" id="email" name="email"></input><br></br>
+                            <label for="password">PASSWORD</label><br></br>
+                            <input type="password" id="password" name="password"></input><br></br>
+                            <div className="submit-container">
+                                <input className="submit" type="submit" value="LOG IN" onClick={handleLogIn}></input>
+                            </div>
+                            <div className='already-have'>New user? <span className='switch-to-login' onClick={switchToSignUp}>Sign Up</span></div>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div>
@@ -49,5 +90,3 @@ function LogIn() {
     </div>
   );
 }
-
-export default LogIn;

@@ -101,7 +101,7 @@ input {
     font-family: Univers Bold;
     font-size: 14px;
     height: 26px;
-    width: 70px;
+    width: 80px;
     text-align: center;
     cursor: pointer;
     font-weight: bold;
@@ -114,6 +114,24 @@ input {
 a {
     background-color:#70ACBF;
     text-decoration: none;
+}
+.login-or-signup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.already-have {
+    margin-top: 10px;
+    font-size: 12px;
+    font-family: Univers Regular;
+    text-align: center;
+}
+.switch-to-login {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.switch-to-login:hover {
+    color: #0000007f;
 }
 @font-face {
     font-family: Windsor;
