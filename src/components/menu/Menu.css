@@ -15,7 +15,7 @@
     flex-wrap: wrap;
 }
 .corner-button {
-    font-family: Univers Bold;
+    font-family: Univers Regular;
     margin: 0 0;
     background-color: #70adbf00;
     color: #ffffff89;
@@ -137,6 +137,9 @@
 }
 .corner-button.username.black:hover {
     color: black;
+}
+.corner-button.index.black {
+    font-family: Univers Regular;
 }
 .logout-button.black {
     font-family: Univers Regular;

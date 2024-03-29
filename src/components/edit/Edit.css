@@ -61,17 +61,15 @@
     border: none;
     margin: 0;
     padding: 0;
-    width: 80vw;
+    width: 500px;
 }
 .upload-new-cool {
-    background-color: white;
     margin: 0 0 1vh 0;
     font-family: Windsor;
-    font-size: 46px;
+    font-size: 40px;
     color: black;
     display: flex;
     flex-direction: column;
-    /* width: 400px; */
     text-align: center;
 }
 .index-page-center {
@@ -98,7 +96,7 @@
     align-items: center;
     justify-content: center;
     height: 78vh;
-    width: 80vw;
+    width: 500px;
 }
 .upload-button {
     background-color:white;
@@ -168,7 +166,7 @@ select {
     color: black;
     margin-top: 3vh;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
 }
 .close:hover {
     color: #0000007f;
