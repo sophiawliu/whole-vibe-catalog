@@ -1,7 +1,7 @@
-import BottomMenu from './BottomMenu';
+import BottomMenu from './menu/BottomMenu';
 import './Cover.css';
 import FunctionPurpose from './FunctionPurpose';
-import TopMenu from './TopMenu';
+import TopMenu from './menu/TopMenu';
 
 function Cover() {
     return (

@@ -1,19 +1,76 @@
+.edit-container {
+    position:fixed;
+    right: 15px;
+    top: calc(100vh - 68px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 150px;
+}
+.edit-options-container {
+    height: 50px;
+}
+.edit-options {
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    justify-content: center;
+    gap: 3px;
+}
+.edit-option {
+    font-family: Univers Regular;
+    font-size: 16px;
+    cursor: pointer;
+    color: #afcbd3;
+}
+.edit-option:hover {
+    color: #70ACBF;
+}
+.edit-button {
+    position:fixed;
+    cursor: pointer;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 1000px;
+    background-color: #70ACBF;
+    border: 2px solid #70ACBF;
+    top: calc(100vh - 68px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.plus {
+    background-color: #70adbf00;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    margin: 0 0;
+    padding: 0 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight:100;
+    cursor: pointer;
+}
+
+
+
+
 .popup-content {
     background-color: #00000000;
     border: none;
     margin: 0;
     padding: 0;
-    width: 480px;
+    width: 80vw;
 }
 .upload-new-cool {
     background-color: white;
-    margin: 0 0 2vh 0;
+    margin: 0 0 1vh 0;
     font-family: Windsor;
-    font-size: 30px;
+    font-size: 46px;
     color: black;
     display: flex;
     flex-direction: column;
-    width: 400px;
+    /* width: 400px; */
     text-align: center;
 }
 .index-page-center {
@@ -29,6 +86,7 @@
 .inputs {
     margin-top: 2vh;
     background-color: white;
+    width: 80%;
 }
 .upload-form {
     background-color: white;
@@ -38,7 +96,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 540px;
+    height: 78vh;
+    width: 80vw;
 }
 .upload-button {
     background-color:white;
@@ -46,12 +105,12 @@
     border: 2px solid #0000007f;
     border-radius: 2px;
     font-family: Univers Bold;
-    font-size: 14px;
-    height: 30px;
-    width: 90px;
+    font-size: 18px;
+    height: 38px;
+    width: 110px;
     text-align: center;
     cursor: pointer;
-    font-weight: bold;
+    margin-top: 2vh;
 }
 .upload-button:hover {
     background-color: #70ACBF;
@@ -60,9 +119,9 @@
 }
 .upload-new-label {
     color: black;
-    font-family: Univers Regular;
+    font-family: Univers Bold;
     margin-bottom: 4px;
-    font-size: 12px;
+    font-size: 16px;
     background-color: white;
     text-align: left;
 }
@@ -78,32 +137,36 @@ select {
     font-size: 24px;
     color: black;
     border-radius: 2px;
+    padding: 5px;
+    width: calc(100% + 5px);
 }
 .upload-new-input {
     background-color: white;
     font-size: 14px;
     color: black;
     border: 1px solid #0000007f;
+    width: 100%;
 }
 #upload-image {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 60px;
-    padding: 5px;
     border: 1px dashed #0000007f;
+    padding: 5px;
+    width: calc(100% - 5px);
 }
 .input-section {
     display: flex;
     flex-direction: column;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
     background-color: white;
 }
 .close {
     background-color: white;
     color: black;
     text-decoration: underline;
-    margin-top: 1.5vh;
+    margin-top: 2vh;
     cursor: pointer;
     font-size: 14px;
 }

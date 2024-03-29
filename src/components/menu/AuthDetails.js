@@ -1,12 +1,12 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
-import { auth } from '../firebase';
-import { getElement, renderElement } from "./Home";
-import Home from "./Home";
+import { auth } from '../../firebase';
+import { getElement, renderElement } from "../Home";
+import Home from "../Home";
 
 function getUsernameFromEmail(email) {
     const re = /^[^@]*/;
-    return re.exec(email)[0].toUpperCase();
+    return re.exec(email)[0];
 }
 
 function userLogOut() {

@@ -1,6 +1,6 @@
 import React from "react";
-import { getElement, renderElement } from "./Home";
-import Edit from "./Edit";
+import { getElement, renderElement } from "../Home";
+import Edit from "../edit/Edit";
 import './Menu.css'
 
 export default function BottomMenu({ prevPage, nextPage, arrowColor }) {

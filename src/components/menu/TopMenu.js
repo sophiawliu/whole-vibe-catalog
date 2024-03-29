@@ -1,7 +1,7 @@
 import React from "react";
-import { removeElementByClass, getElement, renderElement } from "./Home";
+import { removeElementByClass, getElement, renderElement } from "../Home";
 import AuthDetails from "./AuthDetails";
-import Index from "./Index";
+import Index from "../Index";
 import './Menu.css'
 import BottomMenu from "./BottomMenu";
 

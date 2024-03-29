@@ -1,8 +1,8 @@
 import './FunctionPurpose.css';
 import Cover from './Cover';
 import Index from './Index';
-import TopMenu from './TopMenu';
-import BottomMenu from './BottomMenu';
+import TopMenu from './menu/TopMenu';
+import BottomMenu from './menu/BottomMenu';
 
 function FunctionPurpose() {
     return (
