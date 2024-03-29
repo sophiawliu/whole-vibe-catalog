@@ -70,10 +70,10 @@
 }
 .arrow.black.disabled {
     cursor: not-allowed;
-    color: #313131;
+    color: #89898932;
 }
 .arrow.black.disabled:hover {
-    color: #313131;
+    color: #89898932;
 }
 .corner-button:hover {
     color: white;

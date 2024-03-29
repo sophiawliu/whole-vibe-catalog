@@ -34,7 +34,7 @@ export default function TopMenu({ prevPage, nextPage, arrowColor, topMenuColor }
         <div className='top-menu'>
             <AuthDetails color={topMenuColor}></AuthDetails>
             <div className={`show-menu ${topMenuColor}`} onClick={hideMenu} title="Hide menu">✦</div>
-            <div className={`corner-button index ${topMenuColor}`} onClick={handlePage(<Index></Index>)}>⏺ INDEX</div>
+            <div className={`corner-button index ${topMenuColor}`} onClick={handlePage(<Index></Index>)}>⏺ VIBES</div>
         </div>
     )
 }

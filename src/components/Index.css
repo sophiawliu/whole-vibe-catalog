@@ -2,19 +2,22 @@
     background-color: white;
     height: 100vh;
     width: 100vw;
+    display: flex;
+    justify-content: center;
 }
 .index-page {
     background-color: white;
     position: absolute;
-    padding-top: 8vh;
+    padding-top: 6vh;
     z-index: 0;
+    width: 80vw;
 }
 .page-title {
     color: black;
     font-family: Windsor;
-    font-size: 45px;
-    margin: 2vh 0 4vh 12vw;
+    font-size: 50px;
     background-color: white;
+    text-align: center;
 }
 .vibe-bar {
     background-color:dimgrey;
@@ -37,41 +40,4 @@
     text-overflow:ellipsis;
     overflow: hidden;
     white-space: nowrap;
-}
-.corner-button.white.bottom-right {
-    top: calc(100vh - 15px);
-    color: #ffffff98;
-    font-size: 30;
-    /* bottom: 15px; */
-    left: calc(50% + 2px);
-}
-.corner-button.white.bottom-right:hover {
-    color: white;
-}
-.edit-black-index {
-    position:fixed;
-    cursor: pointer;
-    right: 15px;
-    width: 50px;
-    height: 50px;
-    border-radius: 1000px;
-    background-color: #70ACBF;
-    border: 2px solid #70ACBF;
-    top: calc(100vh - 68px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.plus {
-    background-color: #70adbf00;
-    color: rgb(255, 255, 255);
-    font-size: 40px;
-    margin: 0 0;
-    padding: 0 0;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight:100;
-    cursor: pointer;
-}
-.popup-content {
-    width: 480px;
 }
