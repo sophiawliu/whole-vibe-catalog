@@ -18,22 +18,22 @@ function userLogOut() {
     }).catch(error => console.log(error));
 }
 
-function AuthDetails() {
+function AuthDetails({ color }) {
     const [authUser, setAuthUser] = useState(null);
     
     function showLogOut() {
         const usernameLogOutContainer = getElement('username-logout-container');
-        const usernameLogOut = <div className="corner-button top-left">
-            { authUser ? <div className="username" onClick={hideLogOut}>{getUsernameFromEmail(authUser.email)}</div> : <></> }
-            <div className='logout-button' onClick={userLogOut}>Log Out</div>
+        const usernameLogOut = <div className="username-logout">
+            { authUser ? <div className={`corner-button username ${color}`} onClick={hideLogOut}>{getUsernameFromEmail(authUser.email)}</div> : <></> }
+            <div className={`logout-button ${color}`} onClick={userLogOut}>Log Out</div>
         </div>;
         renderElement(usernameLogOutContainer, usernameLogOut);
     }
 
     function hideLogOut() {
         const usernameLogOutContainer = getElement('username-logout-container');
-        const username = <div className="corner-button top-left">
-            { authUser ? <div className="username" onClick={showLogOut}>{getUsernameFromEmail(authUser.email)}</div> : <></> }
+        const username = <div className="username-logout">
+            { authUser ? <div className={`corner-button username ${color}`} onClick={showLogOut}>{getUsernameFromEmail(authUser.email)}</div> : <></> }
         </div>;
         renderElement(usernameLogOutContainer, username);
     }
@@ -54,7 +54,7 @@ function AuthDetails() {
     return (
         <div className='username-logout-container'>
             <div className="username-logout">
-                { authUser ? <div className="corner-button top-left" onClick={showLogOut}>{getUsernameFromEmail(authUser.email)}</div> : <></> }
+                { authUser ? <div className={`corner-button username ${color}`} onClick={showLogOut}>{getUsernameFromEmail(authUser.email)}</div> : <></> }
             </div>
         </div>
     )
