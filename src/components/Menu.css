@@ -1,8 +1,11 @@
 .menu-subcontainer {
-    position: relative;
+    height: 0vh;
+    position: sticky;
+    top: 0px;
 }
 .corner-buttons-container {
     background-color: #70adbf00;
+    height: 0;
 }
 .corner-buttons {
     display: flex;
@@ -98,7 +101,7 @@
     color: white;
 }
 .username-logout-container {
-    width: 50vw;
+    height: 0;
 }
 .username-logout {
     width: 50vw;

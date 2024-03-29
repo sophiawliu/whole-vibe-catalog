@@ -14,6 +14,7 @@ h1 {
 .page.white {
     background-color: white;
     width: 423px;
+    z-index: 1000;
 }
 .page.white * {
     background-color: white;

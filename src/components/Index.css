@@ -2,6 +2,7 @@
     background-color: white;
     height: 100vh;
     width: 100vw;
+    
 }
 .index-page {
     background-color: white;
@@ -27,6 +28,9 @@
 .vibe-bar:hover {
     background-color:darkgray;
 }
+.vibe-bars {
+    z-index: 1002;
+}
 .vibe-title {
     width: 100vw;
     font-family: Windsor;
@@ -36,10 +40,6 @@
     text-overflow:ellipsis;
     overflow: hidden;
     white-space: nowrap;
-}
-.menu-container-index {
-    position: sticky;
-    top: 0;
 }
 .corner-button.white.bottom-right {
     top: calc(100vh - 15px);
