@@ -122,17 +122,20 @@
 }
 .logout-button:hover {
     color: rgb(255, 255, 255);
+    text-decoration: underline;
 }
 .username {
     color: #ffffff89;
+    font-family: Univers Regular;
 }
 .username:hover {
     color: white;
 }
-.username.black {
+.corner-button.username.black {
     color: #0000006e;
+    font-family: Univers Regular;
 }
-.username.black:hover {
+.corner-button.username.black:hover {
     color: black;
 }
 .logout-button.black {

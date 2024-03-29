@@ -26,6 +26,7 @@
 }
 .edit-option:hover {
     color: #70ACBF;
+    text-decoration: underline;
 }
 .edit-button {
     position:fixed;
@@ -165,11 +166,11 @@ select {
 .close {
     background-color: white;
     color: black;
-    text-decoration: underline;
-    margin-top: 2vh;
+    margin-top: 3vh;
     cursor: pointer;
     font-size: 14px;
 }
 .close:hover {
     color: #0000007f;
+    text-decoration: underline;
 }
