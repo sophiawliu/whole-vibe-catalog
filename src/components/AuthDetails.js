@@ -1,11 +1,21 @@
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { auth } from '../firebase';
 import { getElement, renderElement } from "./Home";
+import Home from "./Home";
 
 function getUsernameFromEmail(email) {
     const re = /^[^@]*/;
     return re.exec(email)[0].toUpperCase();
+}
+
+function userLogOut() {
+    signOut(auth).then(() => {
+        console.log('signout successful');
+        const app = getElement('App');
+        const home = <Home></Home>;
+        renderElement(app, home);
+    }).catch(error => console.log(error));
 }
 
 function AuthDetails() {
@@ -15,7 +25,7 @@ function AuthDetails() {
         const usernameLogOutContainer = getElement('username-logout-container');
         const usernameLogOut = <div className="corner-button top-left">
             { authUser ? <div className="username" onClick={hideLogOut}>{getUsernameFromEmail(authUser.email)}</div> : <></> }
-            <div className='logout-button'>Log Out</div>
+            <div className='logout-button' onClick={userLogOut}>Log Out</div>
         </div>;
         renderElement(usernameLogOutContainer, usernameLogOut);
     }
@@ -35,8 +45,12 @@ function AuthDetails() {
             } else {
                 setAuthUser(null);
             }
-        })
-    }, [])
+        });
+        return () => {
+            listen();
+        }
+    }, []);
+
     return (
         <div className='username-logout-container'>
             <div className="username-logout">
