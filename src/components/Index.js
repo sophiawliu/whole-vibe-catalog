@@ -3,6 +3,7 @@ import FunctionPurpose from './FunctionPurpose';
 import 'reactjs-popup/dist/index.css';
 import TopMenu from './menu/TopMenu';
 import BottomMenu from './menu/BottomMenu';
+import VibeCard from './index/VibeCard';
 
 function Index() {
     return (
@@ -12,7 +13,9 @@ function Index() {
             </div>
             <div className='index-page'>
                 <h1 className='page-title'>TABLE OF VIBES</h1>
-                
+                <div className='vibe-cards'>
+                    <VibeCard></VibeCard>
+                </div>
             </div>
             <div className='bottom-menu-container'>
                 <BottomMenu prevPage={<FunctionPurpose></FunctionPurpose>} nextPage={null} arrowColor='black'></BottomMenu>
