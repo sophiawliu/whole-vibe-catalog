@@ -4,7 +4,6 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import SignUp from './SignUp';
 import { removeElementByClass, getElement, renderElement } from '../Home';
 import Cover from '../Cover';
-import { render } from '@testing-library/react';
 
 function switchToSignUp() {
     const signup = <SignUp></SignUp>
@@ -31,6 +30,7 @@ function LogIn() {
                 showCover();
             }).catch((error) => {
                 console.log(error);
+                console.log('meow!')
             })
     }
 

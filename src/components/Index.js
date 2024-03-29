@@ -1,11 +1,15 @@
 import './Index.css';
 import FunctionPurpose from './FunctionPurpose';
 import 'reactjs-popup/dist/index.css';
-import Menu from './Menu';
+import TopMenu from './TopMenu';
+import BottomMenu from './BottomMenu';
 
 function Index() {
     return (
         <div className="Index">
+            <div className='top-menu-container'>
+                <TopMenu prevPage={<FunctionPurpose></FunctionPurpose>} nextPage={null} arrowColor='' topMenuColor='black'></TopMenu>
+            </div>
             <div className='index-page'>
                 <h1 className='page-title'>INDEX</h1>
                 <div className='vibe-bar'>
@@ -27,8 +31,9 @@ function Index() {
                     <div className='vibe-title'>Cowboy Western</div>
                 </div>
             </div>
-                
-            <Menu prevPage={<FunctionPurpose></FunctionPurpose>} nextPage={null} topMenuColor='black'></Menu>
+            <div className='bottom-menu-container'>
+                <BottomMenu prevPage={<FunctionPurpose></FunctionPurpose>} nextPage={null} arrowColor=''></BottomMenu>
+            </div>
         </div>
   );
 }

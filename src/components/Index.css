@@ -2,12 +2,12 @@
     background-color: white;
     height: 100vh;
     width: 100vw;
-    
 }
 .index-page {
     background-color: white;
     position: absolute;
     padding-top: 8vh;
+    z-index: 0;
 }
 .page-title {
     color: black;
@@ -27,9 +27,6 @@
 }
 .vibe-bar:hover {
     background-color:darkgray;
-}
-.vibe-bars {
-    z-index: 1002;
 }
 .vibe-title {
     width: 100vw;
@@ -52,7 +49,7 @@
     color: white;
 }
 .edit-black-index {
-    position:absolute;
+    position:fixed;
     cursor: pointer;
     right: 15px;
     width: 50px;
