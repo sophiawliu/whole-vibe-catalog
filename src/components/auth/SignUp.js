@@ -28,12 +28,12 @@ function SignUp() {
     return (
         <div className='login-or-signup'>
             <h3 className="login-word">Sign Up</h3>
-            <form onSubmit={signUp}>
+            <form className='signup-login-form' onSubmit={signUp}>
                 <label for="email">EMAIL ADDRESS</label><br></br>
-                <input type="email" id="email" name="email" value={email} onChange={(e)=>setEmail(e.target.value)}></input><br></br>
+                <input className='login-input' type="email" id="email" name="email" value={email} onChange={(e)=>setEmail(e.target.value)}></input><br></br>
 
                 <label for="password">PASSWORD</label><br></br>
-                <input type="password" id="password" name="password" value={password} onChange={(e)=>setPassword(e.target.value)}></input><br></br>
+                <input className='login-input' type="password" id="password" name="password" value={password} onChange={(e)=>setPassword(e.target.value)}></input><br></br>
 
                 <div className="submit-container">
                     <button className="submit" type="submit" onClick={signUp}>SIGN UP</button>

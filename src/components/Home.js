@@ -1,8 +1,6 @@
 import './Home.css';
-import Cover from './Cover';
 import * as ReactDOM from 'react-dom';
 import SignUp from './auth/SignUp';
-import LogIn from './auth/LogIn';
 
 export function removeElementByClass(className){
     const elements = document.getElementsByClassName(className);
@@ -16,25 +14,6 @@ export function renderElement(parentClass, element) {
 export function getElement(className) {
     const login = ReactDOM.createRoot(document.getElementsByClassName(className)[0]);
     return login;
-}
-function handleLogIn() {
-    removeElementByClass("LogIn");
-    const app = getElement("App");
-    const cover = <Cover></Cover>;
-    renderElement(app, cover);
-}
-function switchToLogIn() {
-    const login = <LogIn></LogIn>
-    removeElementByClass('login-or-signup');
-    const blueEarth = getElement('blue-earth');
-    renderElement(blueEarth, login);
-}
-
-function switchToSignUp() {
-    const signup = <SignUp></SignUp>
-    removeElementByClass('login-or-signup');
-    const blueEarth = getElement('blue-earth');
-    renderElement(blueEarth, signup);
 }
 
 export default function Home() {

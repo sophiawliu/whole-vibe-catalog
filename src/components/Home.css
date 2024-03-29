@@ -66,7 +66,7 @@ h3 {
 }
 .login-word {
     background-color: #70ACBF;
-    font-size: 24px;
+    font-size: 28px;
 }
 form {
     font-family: Univers Regular;
@@ -132,6 +132,12 @@ a {
 }
 .switch-to-login:hover {
     color: #0000007f;
+}
+.signup-login-form {
+    width: 200px;
+}
+.login-input {
+    width: 100%;
 }
 @font-face {
     font-family: Windsor;

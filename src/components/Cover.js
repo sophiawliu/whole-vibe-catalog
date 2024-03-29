@@ -2,7 +2,6 @@ import './Cover.css';
 import {removeElementByClass, renderElement, getElement} from './Home';
 import LogIn from './Home';
 import FunctionPurpose from './FunctionPurpose';
-import * as ReactDOM from 'react-dom';
 import Index from './Index';
 import Edit from './Edit';
 import AuthDetails from './AuthDetails';
