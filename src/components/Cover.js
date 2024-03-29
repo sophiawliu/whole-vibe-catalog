@@ -1,10 +1,11 @@
 import './Cover.css';
-import {removeElementByClass, renderElement, getElement} from './LogIn';
-import LogIn from './LogIn';
+import {removeElementByClass, renderElement, getElement} from './Home';
+import LogIn from './Home';
 import FunctionPurpose from './FunctionPurpose';
 import * as ReactDOM from 'react-dom';
 import Index from './Index';
 import Edit from './Edit';
+import AuthDetails from './AuthDetails';
 
 function handleEnter() {
     removeElementByClass("Cover");
@@ -26,14 +27,13 @@ function showMenu() {
         <div className='show-menu' onClick={hideMenu} title="Hide menu">✦</div>
         <div class="corner-buttons-container">
             <div className='corner-buttons'>
-                <div className='corner-button top-left' onClick={handleLogOut}>LOG OUT</div>
+                <AuthDetails></AuthDetails>
                 <div className='corner-button top-right' onClick={handleIndex}>⏺ INDEX</div>
                 <div className='corner-button bottom-left'onClick={handleEnter}>→</div>
                 <div className='corner-button bottom-right'></div>
             </div>
         </div>
         <Edit></Edit>
-        {/* <div className='edit' title="Edit catalog">✎</div> */}
     </div>
     const menuContainer = getElement("menu-container");
     renderElement(menuContainer, menuSubcontainer);
@@ -79,14 +79,13 @@ function Cover() {
                 <div className='show-menu' onClick={hideMenu} title="Hide menu">✦</div>
                 <div class="corner-buttons-container">
                     <div className='corner-buttons'>
-                        <div className='corner-button top-left' onClick={handleLogOut}>LOG OUT</div>
+                        <AuthDetails></AuthDetails>
                         <div className='corner-button top-right' onClick={handleIndex}>⏺ INDEX</div>
                         <div className='corner-button bottom-left'onClick={handleEnter}>→</div>
                         <div className='corner-button bottom-right'></div>
                     </div>
                 </div>
                 <Edit></Edit>
-                {/* <div className='edit' title="Edit catalog">✎</div> */}
             </div>
         </div>
     </div>

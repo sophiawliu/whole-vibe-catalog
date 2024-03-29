@@ -1,6 +1,6 @@
 import './Edit.css';
-import {removeElementByClass, renderElement, getElement} from './LogIn';
-import LogIn from './LogIn';
+import {removeElementByClass, renderElement, getElement} from './Home';
+import LogIn from './Home';
 import FunctionPurpose from './FunctionPurpose';
 import * as ReactDOM from 'react-dom';
 import Index from './Index';

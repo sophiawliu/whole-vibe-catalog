@@ -1,5 +1,5 @@
 import './Index.css';
-import {removeElementByClass, renderElement, getElement} from './LogIn';
+import {removeElementByClass, renderElement, getElement} from './Home';
 import { handleLogOut, handleIndex, openEdit } from './Cover';
 import * as ReactDOM from 'react-dom';
 import FunctionPurpose from './FunctionPurpose';
