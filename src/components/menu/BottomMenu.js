@@ -3,7 +3,7 @@ import { getElement, renderElement } from "../Home";
 import Edit from "../edit/Edit";
 import './Menu.css'
 
-export default function BottomMenu({ prevPage, nextPage, arrowColor, userID }) {
+export default function BottomMenu({ prevPage, nextPage, arrowColor }) {
     
     function handlePage(page) {
         return () => {
@@ -51,7 +51,7 @@ export default function BottomMenu({ prevPage, nextPage, arrowColor, userID }) {
                 {leftArrowButton(prevPage)}
                 {rightArrowButton(nextPage)}
             </div>
-            <Edit userID={userID}></Edit>
+            <Edit></Edit>
         </div>
     )
 }

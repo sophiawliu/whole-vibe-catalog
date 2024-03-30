@@ -4,14 +4,14 @@ import CreateVibe from './CreateVibe';
 import AddCool from './AddCool';
 import { createVibeInputs } from './formSource';
 
-function Edit({ userID }) {
+function Edit() {
 
     function showEditOptions() {
         const editContainer = getElement('edit-container');
         const editSubcontainer = <div className='edit-subcontainer'>
             <div className='edit-options-container'>
                 <div className='edit-options'>
-                    <CreateVibe inputs={createVibeInputs} userID={userID}></CreateVibe>
+                    <CreateVibe inputs={createVibeInputs}></CreateVibe>
                     <AddCool></AddCool>
                 </div>
             </div>

@@ -4,11 +4,11 @@ import Index from './Index';
 import TopMenu from './menu/TopMenu';
 import BottomMenu from './menu/BottomMenu';
 
-function FunctionPurpose({ userID }) {
+function FunctionPurpose() {
     return (
         <div className="FunctionPurpose">
             <div className='top-menu-container'>
-                <TopMenu prevPage={<Cover></Cover>} nextPage={<Index></Index>} arrowColor='black' topMenuColor='black' userID={userID}></TopMenu>
+                <TopMenu prevPage={<Cover></Cover>} nextPage={<Index></Index>} arrowColor='black' topMenuColor='black'></TopMenu>
             </div>
             <div className="page white">
                 <h1 class="black-header">FUNCTION</h1>
@@ -26,7 +26,7 @@ function FunctionPurpose({ userID }) {
                 <p class="univers-reg">We are as gods and might as well get good at it. So far, remotely done power and glory—as via black box and attention-greedy algorithms—has succeeded to the point where humans are followers and gross defects obscure actual gains. In response to this dilemma and to these gains a realm of intimate, personal power is developing—power of the individual to conduct their own education, find their own inspiration, shape their own environment, and share their adventure with whoever is interested. Vibes that aid this process are sought and promoted by your own WHOLE VIBE CATALOG.</p>
             </div>
             <div className='bottom-menu-container'>
-                <BottomMenu userID={userID} prevPage={<Cover></Cover>} nextPage={<Index></Index>} arrowColor='black'></BottomMenu>
+                <BottomMenu prevPage={<Cover></Cover>} nextPage={<Index></Index>} arrowColor='black'></BottomMenu>
             </div>
         </div>
   );

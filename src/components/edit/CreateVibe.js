@@ -3,9 +3,10 @@ import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from '../../firebase';
 import { useState } from "react";
 
-export default function CreateVibe({ inputs, userID }) {
+export default function CreateVibe({ inputs }) {
     const [file, setFile] = useState('');
     const [data, setData] = useState('');
+    const userID = localStorage.getItem('uid')
 
     const handleInput = (e) => {
         const id = e.target.id;
@@ -21,7 +22,7 @@ export default function CreateVibe({ inputs, userID }) {
         try{
             await addDoc(collection(db, "vibes"), {
                 ...data,
-                UID: userID, 
+                uid: userID,
                 timeStamp: serverTimestamp()
               });
         }catch(err){
