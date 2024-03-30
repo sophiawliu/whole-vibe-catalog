@@ -29,16 +29,20 @@ export default function AddCool() {
                                     </select>
                                 </div>
                                 <div className='input-section'>
+                                    <label className='upload-new-label' for="cool-description">LINK</label>
+                                    <input className='upload-new-input' name='link'></input>
+                                </div>
+                                <div className='input-section'>
                                     <label className='upload-new-label' for="cool-description">NOTES</label>
                                     <textarea className='upload-new-input' id='cool-description' name='cool-description' rows={3}></textarea>
                                 </div>
-                                <div className='input-section'>
+                                {/* <div className='input-section'>
                                     <label className='upload-new-label' for="cool-description">TAGS</label>
-                                    <input className='upload-new-input' name='playlist'></input>
-                                </div>
+                                    <input className='upload-new-input' name='tags'></input>
+                                </div> */}
 
                             </div>
-                            <button className='upload-button' type='submit'>UPLOAD</button>
+                            <button className='upload-button' type='submit'>ADD COOL</button>
                             <div className='close' onClick={() => close()}>Close</div>
                         </form>
                         </div>

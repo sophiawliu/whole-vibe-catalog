@@ -5,11 +5,11 @@ import TopMenu from './menu/TopMenu';
 import BottomMenu from './menu/BottomMenu';
 import VibeCard from './index/VibeCard';
 
-function Index() {
+function Index({ userID }) {
     return (
         <div className="Index">
             <div className='top-menu-container'>
-                <TopMenu prevPage={<FunctionPurpose></FunctionPurpose>} nextPage={null} arrowColor='black' topMenuColor='black'></TopMenu>
+                <TopMenu prevPage={<FunctionPurpose></FunctionPurpose>} nextPage={null} arrowColor='black' topMenuColor='black' userID={userID}></TopMenu>
             </div>
             <div className='index-page'>
                 <h1 className='page-title'>TABLE OF VIBES</h1>
@@ -18,7 +18,7 @@ function Index() {
                 </div>
             </div>
             <div className='bottom-menu-container'>
-                <BottomMenu prevPage={<FunctionPurpose></FunctionPurpose>} nextPage={null} arrowColor='black'></BottomMenu>
+                <BottomMenu userID={userID} prevPage={<FunctionPurpose></FunctionPurpose>} nextPage={null} arrowColor='black'></BottomMenu>
             </div>
         </div>
   );

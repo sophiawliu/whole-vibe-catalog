@@ -5,32 +5,34 @@ import SignUp from './SignUp';
 import { removeElementByClass, getElement, renderElement } from '../Home';
 import Cover from '../Cover';
 
-function switchToSignUp() {
-    const signup = <SignUp></SignUp>
-    removeElementByClass('login-or-signup');
-    const blueEarth = getElement('blue-earth');
-    renderElement(blueEarth, signup);
-}
-
-function showCover() {
-    const app = getElement('App');
-    const cover = <Cover></Cover>;
-    renderElement(app, cover);
-}
-
 function LogIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [userID, setUserID] = useState('');
+
+    function switchToSignUp() {
+        const signup = <SignUp></SignUp>
+        removeElementByClass('login-or-signup');
+        const blueEarth = getElement('blue-earth');
+        renderElement(blueEarth, signup);
+    }
+    
+    function showCover() {
+        const app = getElement('App');
+        const cover = <Cover userID={userID}></Cover>;
+        renderElement(app, cover);
+    }
 
     const logIn = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
             .then((useCredential) => {
-                console.log(useCredential);
+                console.log(useCredential.user.uid);
+                setUserID(useCredential.user.uid);
+                console.log('userID:', userID);
                 showCover();
             }).catch((error) => {
                 console.log(error);
-                console.log('meow!')
             })
     }
 

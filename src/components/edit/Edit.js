@@ -1,39 +1,40 @@
 import './Edit.css';
-import Popup from 'reactjs-popup';
-import { removeElementByClass, getElement, renderElement } from "../Home";
+import { getElement, renderElement } from "../Home";
 import CreateVibe from './CreateVibe';
 import AddCool from './AddCool';
+import { createVibeInputs } from './formSource';
 
-function showEditOptions() {
-    const editContainer = getElement('edit-container');
-    const editSubcontainer = <div className='edit-subcontainer'>
-        <div className='edit-options-container'>
-            <div className='edit-options'>
-                <CreateVibe></CreateVibe>
-                <AddCool></AddCool>
+function Edit({ userID }) {
+
+    function showEditOptions() {
+        const editContainer = getElement('edit-container');
+        const editSubcontainer = <div className='edit-subcontainer'>
+            <div className='edit-options-container'>
+                <div className='edit-options'>
+                    <CreateVibe inputs={createVibeInputs} userID={userID}></CreateVibe>
+                    <AddCool></AddCool>
+                </div>
+            </div>
+            <div className='edit-button' onClick={hideEditOptions}>
+                <div className='plus'>+</div>
             </div>
         </div>
-        <div className='edit-button' onClick={hideEditOptions}>
-            <div className='plus'>+</div>
+        renderElement(editContainer, editSubcontainer);
+    }
+    
+    function hideEditOptions() {
+        const editContainer = getElement('edit-container');
+        const editSubcontainer = <div className='edit-subcontainer'>
+            <div className='edit-options-container'>
+                <div className='edit-options'></div>
+            </div>
+            <div className='edit-button' onClick={showEditOptions}>
+                <div className='plus'>+</div>
+            </div>
         </div>
-    </div>
-    renderElement(editContainer, editSubcontainer);
-}
+        renderElement(editContainer, editSubcontainer);
+    }
 
-function hideEditOptions() {
-    const editContainer = getElement('edit-container');
-    const editSubcontainer = <div className='edit-subcontainer'>
-        <div className='edit-options-container'>
-            <div className='edit-options'></div>
-        </div>
-        <div className='edit-button' onClick={showEditOptions}>
-            <div className='plus'>+</div>
-        </div>
-    </div>
-    renderElement(editContainer, editSubcontainer);
-}
-
-function Edit() {
     return (
         <div className='edit-container'>
             <div className='edit-subcontainer'>

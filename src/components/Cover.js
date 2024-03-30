@@ -3,11 +3,11 @@ import './Cover.css';
 import FunctionPurpose from './FunctionPurpose';
 import TopMenu from './menu/TopMenu';
 
-function Cover() {
+function Cover({ userID }) {
     return (
     <div className="Cover">
         <div className='top-menu-container'>
-            <TopMenu prevPage={null} nextPage={<FunctionPurpose></FunctionPurpose>} arrowColor='' topMenuColor=''></TopMenu>
+            <TopMenu prevPage={null} nextPage={<FunctionPurpose></FunctionPurpose>} arrowColor='' topMenuColor='' userID={userID}></TopMenu>
         </div>
         <div className="page">
         <h1 className='wvc'>WHOLE VIBE CATALOG</h1>
@@ -21,7 +21,7 @@ function Cover() {
             </div>
         </div>
         <div className='bottom-menu-container'>
-            <BottomMenu prevPage={null} nextPage={<FunctionPurpose></FunctionPurpose>} arrowColor=''></BottomMenu>
+            <BottomMenu userID={userID} prevPage={null} nextPage={<FunctionPurpose></FunctionPurpose>} arrowColor=''></BottomMenu>
         </div>
     </div>
   );
