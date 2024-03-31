@@ -165,7 +165,7 @@ select {
     color: black;
     margin-top: 3vh;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
 }
 .close:hover {
     color: #0000007f;
