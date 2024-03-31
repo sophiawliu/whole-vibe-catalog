@@ -26,7 +26,6 @@ function LogIn() {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
             .then((useCredential) => {
-                console.log(useCredential);
                 localStorage.setItem('uid', useCredential.user.uid);
                 showCover();
             }).catch((error) => {

@@ -10,12 +10,13 @@ export default function AddCool() {
                 <div className='modal'>
                     <div className="Edit">
                         <form className='upload-form'>
-                            <h1 className='upload-new-cool'>Add New Cool</h1>
+                            <div className='x-button' onClick={() => close()}>✕</div>
+                            <h1 className='upload-new-cool'>ADD NEW COOL</h1>
                             <div className="inputs">
 
                                 <div className='input-section'>
                                     <label className='upload-new-label' for="upload-image">IMAGE</label>
-                                    <input className='upload-new-input' id='upload-image' name='upload-image' type='file'></input>
+                                    <input className='upload-new-input' id='cover-image' name='cover-image' type='file'></input>
                                 </div>
                                 <div className='input-section'>
                                     <label className='upload-new-label' for="vibe-dropdown">VIBE</label>
@@ -36,10 +37,6 @@ export default function AddCool() {
                                     <label className='upload-new-label' for="cool-description">NOTES</label>
                                     <textarea className='upload-new-input' id='cool-description' name='cool-description' rows={3}></textarea>
                                 </div>
-                                {/* <div className='input-section'>
-                                    <label className='upload-new-label' for="cool-description">TAGS</label>
-                                    <input className='upload-new-input' name='tags'></input>
-                                </div> */}
 
                             </div>
                             <button className='upload-button' type='submit'>ADD COOL</button>

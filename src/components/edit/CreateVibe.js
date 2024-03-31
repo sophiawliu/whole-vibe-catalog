@@ -1,20 +1,60 @@
 import Popup from "reactjs-popup";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"; 
-import { db } from '../../firebase';
-import { useState } from "react";
+import { db, storage } from '../../firebase';
+import { useEffect, useState } from "react";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import Index from "../Index";
+import { getElement, removeElementByClass, renderElement } from "../Home";
 
 export default function CreateVibe({ inputs }) {
     const [file, setFile] = useState('');
     const [data, setData] = useState('');
-    const userID = localStorage.getItem('uid')
+    const userID = localStorage.getItem('uid');
+    const [perc, setPerc] = useState(null);
+
+    useEffect(() => {
+        const uploadFile = () => {
+            const name = new Date().getTime() + file.name;
+            const storageRef = ref(storage, name);
+            const uploadTask = uploadBytesResumable(storageRef, file);
+
+            uploadTask.on('state_changed', 
+            (snapshot) => {
+                const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                console.log('Upload is ' + progress + '% done');
+                setPerc(progress);
+                switch (snapshot.state) {
+                case 'paused':
+                    console.log('Upload is paused');
+                    break;
+                case 'running':
+                    console.log('Upload is running');
+                    break;
+                default:
+                    break;
+                }
+            }, 
+            (error) => {
+                console.log(error)
+            }, 
+            () => {
+                getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+                    setData((prev) => ({...prev, img: downloadURL}))
+                });
+            }
+            );
+        };
+        file && uploadFile();
+    }, [file]);
 
     const handleInput = (e) => {
         const id = e.target.id;
         const value = e.target.value;
-
         setData({ ...data, [id]: value });
+    }
 
-        console.log(data);
+    function renderCard(data) {
+
     }
 
     const handleCreateVibe = async(e) => {
@@ -25,6 +65,12 @@ export default function CreateVibe({ inputs }) {
                 uid: userID,
                 timeStamp: serverTimestamp()
               });
+              // render card
+              renderCard();
+              // close edit popup
+              const app = getElement("App");
+              renderElement(app, <Index></Index>);
+              removeElementByClass('popup-overlay');
         }catch(err){
             console.log(err);
         }
@@ -39,7 +85,8 @@ export default function CreateVibe({ inputs }) {
                 <div className='modal'>
                     <div className="Edit">
                         <form className='upload-form' onSubmit={handleCreateVibe}>
-                            <h1 className='upload-new-cool'>Create New Vibe</h1>
+                            <div className='x-button' onClick={() => close()}>✕</div>
+                            <h1 className='upload-new-cool'>CREATE NEW VIBE</h1>
                             <div className="inputs">
                                 {inputs.map((input) => (
                                     <div className="input-section" key={input.id}>
@@ -55,11 +102,15 @@ export default function CreateVibe({ inputs }) {
                                 ))}
                                 <div className='input-section'>
                                     <label className='upload-new-label' for="cover-image">COVER IMAGE</label>
-                                    <input className='upload-new-input' id='cover-image' name='upload-image' type='file'></input>
+                                    <input className='upload-new-input' id='cover-image' name='cover-image' type='file' onChange={
+                                        (e) => {
+                                            setFile(e.target.files[0])
+                                        }
+                                    }></input>
                                 </div>
 
                             </div>
-                            <button className='upload-button' type='submit'>CREATE VIBE</button>
+                            <button disabled={perc !== null && perc < 100} className='upload-button' type='submit'>CREATE VIBE</button>
                             <div className='close' onClick={() => close()}>Close</div>
                         </form>
                         </div>

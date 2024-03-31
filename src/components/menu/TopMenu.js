@@ -5,13 +5,14 @@ import Index from "../Index";
 import './Menu.css'
 import BottomMenu from "./BottomMenu";
 
-export default function TopMenu({ prevPage, nextPage, arrowColor, topMenuColor }) {
-    function handlePage(page) {
-        return () => {
-            const app = getElement("App");
-            renderElement(app, page);
-        }
+export function handlePage(page) {
+    return () => {
+        const app = getElement("App");
+        renderElement(app, page);
     }
+}
+
+export default function TopMenu({ prevPage, nextPage, arrowColor, topMenuColor }) {
 
     function showMenu() {
         const topMenuContainer = getElement('top-menu-container');

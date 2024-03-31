@@ -65,8 +65,8 @@
 }
 .upload-new-cool {
     margin: 0 0 1vh 0;
-    font-family: Windsor;
-    font-size: 40px;
+    font-family: Univers Bold;
+    font-size: 35px;
     color: black;
     display: flex;
     flex-direction: column;
@@ -95,32 +95,38 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px 0 50px 0;
+    padding: 40px 0 40px 0;
     width: 500px;
 }
 .upload-button {
     background-color:white;
     color: #0000007f;
-    border: 2px solid #0000007f;
+    border: px solid #0000007f;
     border-radius: 2px;
     font-family: Univers Bold;
-    font-size: 18px;
-    height: 38px;
-    width: 145px;
+    font-size: 16px;
+    height: 32px;
+    width: 130px;
     text-align: center;
     cursor: pointer;
-    margin-top: 2vh;
+    margin-top: 1vh;
 }
 .upload-button:hover {
     background-color: #70ACBF;
     color: white;
     border: 2px solid #70ACBF;
 }
+.upload-button:disabled {
+    color: #00000026;
+    border: 2px solid #00000026;
+    cursor: not-allowed;
+    background-color: white;
+}
 .upload-new-label {
     color: black;
     font-family: Univers Bold;
     margin-bottom: 4px;
-    font-size: 16px;
+    font-size: 14px;
     background-color: white;
     text-align: left;
 }
@@ -137,7 +143,6 @@ select {
     color: black;
     border-radius: 2px;
     padding: 5px;
-    width: calc(100% + 5px);
 }
 .upload-new-input {
     background-color: white;
@@ -145,14 +150,9 @@ select {
     color: black;
     border: 1px solid #0000007f;
 }
-#upload-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 60px;
+#cover-image {
     border: 1px dashed #0000007f;
     padding: 5px;
-    width: calc(100% - 5px);
 }
 .input-section {
     display: flex;
@@ -162,12 +162,24 @@ select {
 }
 .close {
     background-color: white;
-    color: black;
-    margin-top: 3vh;
+    color: #0000007f;
+    margin-top: 2vh;
     cursor: pointer;
     font-size: 14px;
 }
 .close:hover {
-    color: #0000007f;
+    color: black;
     text-decoration: underline;
+}
+.x-button {
+    color: #0000007f;
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    font-size: 14px;
+    font-family: Univers Regular;
+    cursor: pointer;
+}
+.x-button:hover {
+    color: black;
 }
