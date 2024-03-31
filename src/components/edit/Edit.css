@@ -6,9 +6,14 @@
     flex-direction: row;
     align-items: center;
     width: 150px;
+    background-color: rgba(255, 0, 0, 0);
+}
+.edit-subcontainer {
+    background-color: rgba(255, 0, 0, 0);
 }
 .edit-options-container {
     height: 50px;
+    background-color: rgba(255, 0, 0, 0);
 }
 .edit-options {
     height: 50px;
@@ -16,13 +21,15 @@
     flex-direction: column;
     align-items:flex-end;
     justify-content: center;
-    gap: 3px;
+    gap: 4px;
+    background-color: rgba(255, 0, 0, 0);
 }
 .edit-option {
     font-family: Univers Regular;
     font-size: 16px;
     cursor: pointer;
     color: #afcbd3;
+    background-color: rgba(255, 0, 0, 0);
 }
 .edit-option:hover {
     color: #70ACBF;

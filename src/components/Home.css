@@ -1,9 +1,15 @@
+.Home {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+}
 body {
     background-color: black;
     margin: 0 0;
 }
 * {
     color: white;
+    background-color: white;
 }
 .page {
     width: 500px;
@@ -13,6 +19,7 @@ body {
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
     text-align: justify;
+    background-color: black;
 }
 .wvc {
     font-family: Windsor;
@@ -20,6 +27,7 @@ body {
     text-align: center;
     padding-top: 1vh;
     font-weight: normal;
+    background-color: black;
 }
 .access-to {
     font-family: Univers Cn Regular;
@@ -27,6 +35,7 @@ body {
     font-size: 20px;
     text-align: center;
     font-weight: normal;
+    background-color: black;
 }
 h3 {
     font-family: Windsor;
@@ -34,11 +43,16 @@ h3 {
     margin: 0 0;
     padding-left: 10px;
     font-weight: normal;
+    background-color: black;
+}
+.month-price {
+    background-color: black;
 }
 .login {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: black;
 }
 .blue-earth {
     width: 360px;
@@ -120,16 +134,19 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #70ACBF;
 }
 .already-have {
     margin-top: 10px;
     font-size: 12px;
     font-family: Univers Regular;
     text-align: center;
+    background-color: #70ACBF;
 }
 .switch-to-login {
     text-decoration: underline;
     cursor: pointer;
+    background-color: #70ACBF;
 }
 .switch-to-login:hover {
     color: #0000007f;
@@ -138,7 +155,7 @@ a {
     width: 180px;
 }
 .login-input {
-    width: 100%;
+    width: calc(100% - 3px);
 }
 @font-face {
     font-family: Windsor;

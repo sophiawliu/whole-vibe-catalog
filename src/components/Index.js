@@ -15,6 +15,10 @@ function Index() {
                 <h1 className='page-title'>TABLE OF VIBES</h1>
                 <div className='vibe-cards'>
                     <VibeCard></VibeCard>
+                    <VibeCard></VibeCard>
+                    <VibeCard></VibeCard>
+                    <VibeCard></VibeCard>
+                    <VibeCard></VibeCard>
                 </div>
             </div>
             <div className='bottom-menu-container'>

@@ -90,7 +90,7 @@ export default function CreateVibe({ inputs }) {
                             <div className="inputs">
                                 {inputs.map((input) => (
                                     <div className="input-section" key={input.id}>
-                                        <label className='upload-new-label'>{input.label}</label>
+                                        <label className='upload-new-label' for={input.id}>{input.label}</label>
                                         <input
                                             className="upload-new-input"
                                             id={input.id}

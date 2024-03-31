@@ -27,7 +27,7 @@ export default function Home() {
                     <SignUp></SignUp>
                 </div>
             </div>
-            <div>
+            <div className='month-price'>
                 <h3>Spring 2024</h3>
                 <h3>$0</h3>
             </div>

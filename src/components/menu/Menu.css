@@ -38,6 +38,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background-color: rgba(255, 0, 0, 0);
 }
 .arrow {
     font-family: Univers Bold;
@@ -86,6 +87,7 @@
     top: 12px;
     font-size: 26px;
     z-index: 1;
+    background-color: rgba(255, 0, 0, 0);
 }
 .show-menu:hover {
     color: white;
@@ -112,6 +114,7 @@
     flex-direction: row;
     gap: 8px;
     z-index: 1;
+    background-color: rgba(255, 0, 0, 0);
 }
 .logout-button {
     font-family: Univers Regular;

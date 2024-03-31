@@ -1,16 +1,16 @@
 export const createVibeInputs = [
     {
-        id: 'vibe-title',
+        id: 'vibeTitle',
         label: 'TITLE',
         type: 'text',
     },
     {
-        id: 'vibe-description',
+        id: 'vibeDescription',
         label: 'DESCRIPTION',
         type: 'text',
     },
     {
-        id: 'vibe-playlist',
+        id: 'vibePlaylist',
         label: 'SPOTIFY PLAYLIST',
         type: 'url',
     },
