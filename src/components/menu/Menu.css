@@ -122,6 +122,7 @@
     cursor: pointer;
     color: #ffffff89;
     z-index: 1;
+    background-color: rgba(255, 0, 0, 0);
 }
 .logout-button:hover {
     color: rgb(255, 255, 255);
