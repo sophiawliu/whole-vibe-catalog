@@ -1,3 +1,9 @@
+.Edit {
+    background-color: #00000000;
+}
+.modal {
+    background-color: #00000000;
+}
 .edit-container {
     position:fixed;
     right: 15px;
@@ -96,7 +102,7 @@
 }
 .upload-form {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 4px;
     color: white;
     display: flex;
     flex-direction: column;
