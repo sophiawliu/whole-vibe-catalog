@@ -2,7 +2,7 @@ import './Edit.css';
 import { getElement, renderElement } from "../Home";
 import CreateVibe from './CreateVibe';
 import AddCool from './AddCool';
-import { createVibeInputs } from './formSource';
+import { createVibeInputs, addCoolInputs } from './formSource';
 
 function Edit() {
 
@@ -12,7 +12,7 @@ function Edit() {
             <div className='edit-options-container'>
                 <div className='edit-options'>
                     <CreateVibe inputs={createVibeInputs}></CreateVibe>
-                    <AddCool></AddCool>
+                    <AddCool inputs={addCoolInputs}></AddCool>
                 </div>
             </div>
             <div className='edit-button' onClick={hideEditOptions}>

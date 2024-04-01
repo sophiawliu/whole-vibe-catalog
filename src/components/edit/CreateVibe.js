@@ -53,10 +53,6 @@ export default function CreateVibe({ inputs }) {
         setData({ ...data, [id]: value });
     }
 
-    function renderCard(data) {
-
-    }
-
     const handleCreateVibe = async(e) => {
         e.preventDefault();
         try{
@@ -65,9 +61,7 @@ export default function CreateVibe({ inputs }) {
                 uid: userID,
                 timeStamp: serverTimestamp()
               });
-              // render card
-              renderCard();
-              // close edit popup
+              // close edit popup and go to vibe index
               const app = getElement("App");
               renderElement(app, <Index></Index>);
               removeElementByClass('popup-overlay');
