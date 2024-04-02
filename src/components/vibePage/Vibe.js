@@ -7,8 +7,7 @@ import Edit from "../edit/Edit";
 
 export default function Vibe({ data }) {
     const image = data.img;
-    const timeCreated = data.timeStamp.toDate().toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"}); // change to last time edited
-    console.log(timeCreated)
+    const timeCreated = data.timeStamp.toDate().toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"}).toUpperCase(); // change to last time edited
     const description = data.vibeDescription;
     const playlistLink = data.vibePlaylist;
     const re = /https:\/\/open\.spotify\.com\/playlist\/(.+)\?si=/i;
@@ -26,7 +25,8 @@ export default function Vibe({ data }) {
                     <img className='vibe-image' src={image} alt={data.vibeTitle}></img>
                     <div className="vibe-title-desc">
                         <h1 className='vibe-title'>{title}</h1>
-                        <div className="vibe-description">{description}<span className="vibe-date"> | {timeCreated}</span></div>
+                        <div className="vibe-description">{description}</div>
+                        <div className="vibe-date">CREATED {timeCreated}</div>
                     </div>
                 </div>
 
