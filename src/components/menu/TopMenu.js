@@ -12,14 +12,15 @@ export function handlePage(page) {
     }
 }
 
-export default function TopMenu({ prevPage, nextPage, arrowColor, topMenuColor }) {
+export default function TopMenu({ playlist, prevPage, nextPage, arrowColor, topMenuColor }) {
 
     function showMenu() {
         const topMenuContainer = getElement('top-menu-container');
-        const topMenu = <TopMenu topMenuColor={topMenuColor} prevPage={prevPage} nextPage={nextPage} arrowColor={arrowColor} ></TopMenu>;
+        const topMenu = <TopMenu playlist={playlist} topMenuColor={topMenuColor} prevPage={prevPage} nextPage={nextPage} arrowColor={arrowColor} ></TopMenu>;
         renderElement(topMenuContainer, topMenu);
         const bottomMenuContainer = getElement('bottom-menu-container');
-        const bottomMenu = <BottomMenu prevPage={prevPage} nextPage={nextPage} arrowColor={arrowColor}></BottomMenu>;
+        console.log('MEOWSA', playlist)
+        const bottomMenu = <BottomMenu playlist={playlist} prevPage={prevPage} nextPage={nextPage} arrowColor={arrowColor}></BottomMenu>;
         renderElement(bottomMenuContainer, bottomMenu);
     }
 
