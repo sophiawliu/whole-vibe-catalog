@@ -1,0 +1,42 @@
+.Vibe {
+    display: flex;
+    justify-content: center;
+}
+.vibe-page {
+    background-color: white;
+    position: absolute;
+    z-index: 0;
+    padding: 10vh 2vh 10vh 2vh;
+}
+.vibe-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+.vibe-image {
+    object-fit: cover;
+    border-radius: 10px;
+    width: 280px;
+    height: 280px;
+}
+.vibe-title {
+    color: black;
+    font-family: Windsor;
+    font-size: 50px;
+    background-color: white;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    margin-top: 0;
+}
+.vibe-description {
+    color: black;
+    font-family: Univers Regular;
+    font-size: 20px;
+    margin-bottom: 24px;
+}
+.vibe-date {
+    font-family: Univers Cn Regular;
+    color: #929292;
+    font-size: 18px;
+}

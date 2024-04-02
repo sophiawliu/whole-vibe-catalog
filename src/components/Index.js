@@ -14,7 +14,7 @@ import {
   } from "firebase/firestore";
 import {db} from '../firebase';
 
-function Index() {
+function Index({ lastPage }) {
     const [data, setData] = useState([]);
     const userID = localStorage.getItem('uid');
     
@@ -56,7 +56,7 @@ function Index() {
                 </div>
             </div>
             <div className='bottom-menu-container'>
-                <BottomMenu prevPage={<FunctionPurpose></FunctionPurpose>} nextPage={null} arrowColor='black'></BottomMenu>
+                <BottomMenu prevPage={<FunctionPurpose></FunctionPurpose>} nextPage={lastPage} arrowColor='black'></BottomMenu>
             </div>
         </div>
   );
