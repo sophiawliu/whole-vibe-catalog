@@ -13,18 +13,20 @@ export default function AddCool({ inputs }) {
     const [vibeTitlesList, setVibeTitlesList] = useState([]);
     const userID = localStorage.getItem('uid');
 
-    useEffect(() => {
-        const list = [];
-        const createVibesTitlesList = async() => {
-            const q = query(collection(db, "vibes"), where("uid", "==", userID));
-            const querySnapshot = await getDocs(q);
-            querySnapshot.forEach((doc) => {
-                list.push(doc.data().vibeTitle);
-            })
-            setVibeTitlesList(list);
-        }
-        createVibesTitlesList();
-    }, [])
+    // add later when quota refreshed - maybe do some other things first !!!
+
+    // useEffect(() => {
+    //     const list = [];
+    //     const createVibesTitlesList = async() => {
+    //         const q = query(collection(db, "vibes"), where("uid", "==", userID));
+    //         const querySnapshot = await getDocs(q);
+    //         querySnapshot.forEach((doc) => {
+    //             list.push(doc.data().vibeTitle);
+    //             console.log(doc.data().vibeTitle)
+    //         })}
+    //     createVibesTitlesList();
+    //     setVibeTitlesList(list);
+    // }, [vibeTitlesList])
 
     useEffect(() => {
         const uploadFile = () => {
