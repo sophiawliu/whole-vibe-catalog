@@ -12,7 +12,6 @@
 .page-title {
     color: black;
     font-family: Windsor;
-    font-size: 60px;
     background-color: white;
     text-align: center;
     letter-spacing: 1px;
@@ -24,4 +23,14 @@
     flex-wrap: wrap;
     padding: 0 5vw 0 5vw;
     justify-content: center;
+}
+@media only screen and (max-width: 1500px) {
+    .page-title {
+        font-size: 60px;
+    }
+}
+@media only screen and (max-width: 720px) {
+    .page-title {
+        font-size: 9vw;
+    }
 }

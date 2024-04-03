@@ -5,6 +5,7 @@
     border-radius: 6px;
     cursor: pointer;
     gap: 2px;
+    width: ;
 }
 .card-wrapper:hover {
     background-color: #ededed;
@@ -17,13 +18,18 @@
 .card-title {
     color: black;
     font-family: Windsor;
-    text-overflow: ellipsis;
+    text-overflow: clip;
+    overflow:hidden;
+    white-space:nowrap;
     background-color: rgba(255, 0, 0, 0);
+    text-align: center;
 }
 .card-description {
     color: black;
     font-family: Univers Regular;
-    text-overflow: ellipsis;
+    text-overflow: clip;
+    overflow:hidden;
+    white-space:nowrap;
     background-color: rgba(255, 0, 0, 0);
     margin-bottom: 2px;
 }
@@ -37,9 +43,11 @@
     }
     .card-title {
         font-size: calc(20vw / 14);
+        width: 20vw;
     }
     .card-description {
         font-size: calc(20vw / 21);
+        width: 20vw;
     }
 }
 @media only screen and (max-width: 1200px) {
@@ -52,9 +60,11 @@
     }
     .card-title {
         font-size: calc(27vw / 14);
+        width: 27vw;
     }
     .card-description {
         font-size: calc(27vw / 21);
+        width: 27vw;
     }
 }
 @media only screen and (max-width: 900px) {
@@ -67,9 +77,11 @@
     }
     .card-title {
         font-size: calc(40vw / 14);
+        width: 40vw;
     }
     .card-description {
         font-size: calc(40vw / 21);
+        width: 40vw;
     }
 }
 @media only screen and (max-width: 600px) {
@@ -82,10 +94,12 @@
         margin-bottom: 18px;
     }
     .card-title {
-        font-size: calc(84vw / 18);
+        font-size: calc(84vw / 14);
+        width: 84vw;
     }
     .card-description {
         font-size: calc(84vw / 26);
         margin-bottom: 8px;
+        width: 84vw;
     }
 }
