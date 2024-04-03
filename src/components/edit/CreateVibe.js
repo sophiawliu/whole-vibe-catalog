@@ -61,7 +61,7 @@ export default function CreateVibe({ inputs }) {
                 uid: userID,
                 timeStamp: serverTimestamp()
               });
-              // close edit popup and go to vibe index
+              // close edit popup and go to index
               const app = getElement("App");
               renderElement(app, <Index></Index>);
               removeElementByClass('popup-overlay');
@@ -96,7 +96,7 @@ export default function CreateVibe({ inputs }) {
                                 ))}
                                 <div className='input-section'>
                                     <label className='upload-new-label' for="cover-image">COVER IMAGE</label>
-                                    <input className='upload-new-input' id='cover-image' name='cover-image' type='file' onChange={
+                                    <input className='upload-new-input' id='cover-image' name='cover-image' type='file' accept='.png,.jpg,.jpeg' onChange={
                                         (e) => {
                                             setFile(e.target.files[0])
                                         }

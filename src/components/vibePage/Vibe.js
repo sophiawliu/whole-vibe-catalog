@@ -22,7 +22,7 @@ export default function Vibe({ data }) {
             </div>
             <div className='vibe-page'>
                 <div className="vibe-header">
-                    <img className='vibe-image' src={image} alt={data.vibeTitle}></img>
+                    {image ? <img className='vibe-image' src={data.img} alt={data.vibeTitle}></img> : <img className='vibe-image' src={'default-cover.png'} alt={data.vibeTitle}></img>}
                     <div className="vibe-title-desc">
                         <h1 className='vibe-title'>{title}</h1>
                         <div className="vibe-description">{description}</div>
