@@ -1,7 +1,7 @@
 export const createVibeInputs = [
     {
         id: 'vibeTitle',
-        label: 'TITLE',
+        label: 'TITLE *',
         type: 'text',
     },
     {
@@ -18,13 +18,18 @@ export const createVibeInputs = [
 
 export const addCoolInputs = [
     {
-        id: 'coolLink',
-        label: 'LINK',
-        type: 'url',
+        id: 'coolTitle',
+        label: 'TITLE',
+        type: 'text',
     },
     {
         id: 'coolNotes',
         label: 'NOTES',
         type: 'text',
+    },
+    {
+        id: 'coolLink',
+        label: 'LINK',
+        type: 'url',
     }
 ]

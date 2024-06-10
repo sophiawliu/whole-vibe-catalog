@@ -12,6 +12,9 @@
 .vibe-header {
     display: flex;
     flex-direction: row;
+    padding-bottom: 5vh;
+    padding-left: 12px;
+    padding-right: 12px;
 }
 .vibe-title-desc {
     display: flex;
@@ -68,6 +71,14 @@
     }
     iframe {
         width: 80vw;
+        background-color: #a5a5a500;
+        position: fixed;
+        bottom: 0px;
+        left: 10vw;
+    }
+    .cools-gallery {
+        width: 80vw;
+        margin-bottom: 12vh;
     }
 }
 @media only screen and (max-width: 1200px) {
@@ -97,6 +108,13 @@
         width: 80vw;
     }
     iframe {
+        width: 80vw;
+        background-color: #a5a5a500;
+        position: fixed;
+        bottom: 0px;
+        left: 10vw;
+    }
+    .cools-gallery {
         width: 80vw;
     }
 }
@@ -128,6 +146,13 @@
     }
     iframe {
         width: 80vw;
+        background-color: #a5a5a500;
+        position: fixed;
+        bottom: 0px;
+        left: 10vw;
+    }
+    .cools-gallery {
+        width: 80vw;
     }
 }
 @media only screen and (max-width: 600px) {
@@ -139,7 +164,7 @@
         gap: 15px;
     }
     .vibe-title {
-        font-size: 5.2vw;
+        font-size: 6.2vw;
         margin-bottom: 8px;
     }
     .vibe-description {
@@ -158,10 +183,27 @@
     }
     iframe {
         width: 90vw;
+        background-color: #a5a5a500;
+        position: fixed;
+        bottom: 0px;
+        left: 5vw;
+    }
+    .cools-gallery {
+        width: 90vw;
     }
 }
 .bottom-menu-container {
     height: fit-content;
     position: absolute;
     bottom: 0;
+    background-color: #a5a5a500;
+}
+.bottom-menu {
+    background-color: #a5a5a500;
+}
+
+.cool-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

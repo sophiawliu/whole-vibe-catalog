@@ -76,6 +76,9 @@
     padding: 0;
     width: 500px;
 }
+.popup-overlay {
+    background-color: #70adbfbb;
+}
 .upload-new-cool {
     margin: 0 0 1vh 0;
     font-family: Univers Bold;

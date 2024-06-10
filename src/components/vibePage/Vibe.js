@@ -1,13 +1,22 @@
 import Index from "../Index";
 import TopMenu from "../menu/TopMenu";
-import VibeCard from "../index/VibeCard";
+import CoolCard from "./CoolCard";
 import BottomMenu from "../menu/BottomMenu";
 import './Vibe.css';
-import Edit from "../edit/Edit";
+import { useState, useEffect } from "react";
+import {
+    collection,
+    getDocs,
+    deleteDoc,
+    doc,
+    onSnapshot,
+  } from "firebase/firestore";
+import {db} from '../../firebase';
+
 
 export default function Vibe({ data }) {
     const image = data.img;
-    const timeCreated = data.timeStamp.toDate().toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"}).toUpperCase(); // change to last time edited
+    const timeCreated = data.timeStamp && data.timeStamp.toDate().toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"}).toUpperCase(); // change to last time edited
     const description = data.vibeDescription;
     const playlistLink = data.vibePlaylist;
     const re = /https:\/\/open\.spotify\.com\/playlist\/(.+)\?si=/i;
@@ -15,6 +24,38 @@ export default function Vibe({ data }) {
     const playlistEmbedSrc = `https://open.spotify.com/embed/playlist/${playlistCode}?utm_source=generator`;
     const title = data.vibeTitle;
     const iframeDiv = <iframe style={{borderRadius:'12px'}} src={playlistEmbedSrc} width="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>;
+
+    const [cools, setCools] = useState([]);
+    const userID = localStorage.getItem('uid');
+
+    useEffect(() => {
+        const unsub = onSnapshot(
+            collection(db, "cools"),
+            (snapShot) => {
+              let list = [];
+              snapShot.docs.forEach((doc) => {
+                  const uid = doc._document.data.value.mapValue.fields.uid.stringValue;
+                  const vibe = doc._document.data.value.mapValue.fields.vibe.stringValue;
+                  if (uid === userID && vibe === data.vibeTitle) {
+                    list.push({ id: doc.id, ...doc.data() });
+                  }
+              });
+            list.sort(function(a, b) { 
+                return a.timeStamp - b.timeStamp;
+            })
+              setCools(list);
+              console.log(list);
+            },
+            (error) => {
+              console.log(error);
+            }
+          );
+      
+          return () => {
+            unsub();
+          };
+        }, []);
+
     return (
         <div className="Vibe">
             <div className='top-menu-container'>
@@ -29,7 +70,13 @@ export default function Vibe({ data }) {
                         <div className="vibe-date">CREATED {timeCreated}</div>
                     </div>
                 </div>
-
+                <div className="cools-gallery">
+                    <div className='cool-cards'>
+                        {cools.map((cool) => (
+                            <CoolCard data={cool}></CoolCard>
+                        ))}
+                    </div>
+                </div>
             </div>
             <div className='bottom-menu-container'>
                 {/* fix this later, save previous page path */}

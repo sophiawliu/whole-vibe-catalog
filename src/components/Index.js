@@ -1,6 +1,6 @@
 import './Index.css';
 import FunctionPurpose from './FunctionPurpose';
-import 'reactjs-popup/dist/index.css';
+// import 'reactjs-popup/dist/index.css';
 import TopMenu from './menu/TopMenu';
 import BottomMenu from './menu/BottomMenu';
 import VibeCard from './index/VibeCard';

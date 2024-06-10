@@ -1,0 +1,180 @@
+.cool-card-wrapper:hover {
+    background-color: #ededed7f;
+}
+.cool-image {
+    width: 100%;
+    border-radius: 6px;
+}
+.cool-notes-link {
+    background-color: rgba(255, 255, 255, 0);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+.cool-link:hover {
+    color: #70ACBF;
+}
+@media only screen and (max-width: 1500px) {
+    .cool-card-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 6px;
+        cursor: pointer;
+        gap: 2px;
+        width: calc((80vw - (12px * 6)) / 3);
+        padding: 12px;
+        height: fit-content;
+    }
+    .cool-title {
+        color: black;
+        font-family: Univers Bold;
+        background-color: rgba(255, 0, 0, 0);
+        font-size: 18px;
+    }
+    .cool-notes {
+        color: black;
+        font-family: Univers Regular;
+        background-color: rgba(255, 0, 0, 0);
+        font-size: 15px;
+        line-height: 1.1em;
+        height: 4.4em; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+    }
+    .cool-link {
+        color: black;
+        font-family: Univers Regular;
+        background-color: rgba(255, 0, 0, 0);
+        text-overflow: ellipsis;
+        overflow:hidden;
+        white-space:nowrap;
+        font-size: 14px;
+        text-decoration: underline;
+        width: calc((80vw - (12px * 6)) / 3 - 12px);
+        display: block;
+    }
+    .cool-date {
+        font-family: Univers Cn Regular;
+        color: #a5a5a5;
+        font-size: 14px;
+        background-color: rgba(255, 0, 0, 0);
+        margin-top: 10px;
+        text-align: left;
+        width: 100%;
+        margin-bottom: 3px;
+    }
+}
+@media only screen and (max-width: 1100px) {
+    .cool-card-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 6px;
+        cursor: pointer;
+        gap: 2px;
+        width: calc((80vw - (12px * 4)) / 2);
+        padding: 12px;
+        height: fit-content;
+    }
+    .cool-title {
+        color: black;
+        font-family: Univers Bold;
+        background-color: rgba(255, 0, 0, 0);
+        font-size: 16px;
+    }
+    .cool-notes {
+        color: black;
+        font-family: Univers Regular;
+        background-color: rgba(255, 0, 0, 0);
+        font-size: 14px;
+        line-height: 1.1em;
+        height: 4.4em; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+    }
+    .cool-link {
+        color: black;
+        font-family: Univers Regular;
+        background-color: rgba(255, 0, 0, 0);
+        text-overflow: ellipsis;
+        overflow:hidden;
+        white-space:nowrap;
+        font-size: 12px;
+        text-decoration: underline;
+        width: calc((80vw - (12px * 4)) / 2 - 12px);
+        display: block;
+    }
+    .cool-date {
+        font-family: Univers Cn Regular;
+        color: #a5a5a5;
+        font-size: 14px;
+        background-color: rgba(255, 0, 0, 0);
+        margin-top: 10px;
+        text-align: left;
+        width: 100%;
+        margin-bottom: 3px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    .cool-card-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 6px;
+        cursor: pointer;
+        gap: 2px;
+        width: calc((90vw - (12px * 2)));
+        padding: 12px;
+        height: fit-content;
+    }
+    .cool-title {
+        color: black;
+        font-family: Univers Bold;
+        background-color: rgba(255, 0, 0, 0);
+        font-size: 18px;
+    }
+    .cool-notes {
+        color: black;
+        font-family: Univers Regular;
+        background-color: rgba(255, 0, 0, 0);
+        font-size: 15px;
+        line-height: 1.1em;
+        height: 4.4em; 
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+    }
+    .cool-link {
+        color: black;
+        font-family: Univers Regular;
+        background-color: rgba(255, 0, 0, 0);
+        text-overflow: ellipsis;
+        overflow:hidden;
+        white-space:nowrap;
+        font-size: 14px;
+        text-decoration: underline;
+        width: calc((90vw - (12px * 2)) - 12px);
+        display: block;
+    }
+    .cool-date {
+        font-family: Univers Cn Regular;
+        color: #a5a5a5;
+        font-size: 14px;
+        background-color: rgba(255, 0, 0, 0);
+        margin-top: 10px;
+        text-align: left;
+        width: 100%;
+        margin-bottom: 3px;
+    }
+}

@@ -5,7 +5,6 @@
     border-radius: 6px;
     cursor: pointer;
     gap: 2px;
-    width: ;
 }
 .card-wrapper:hover {
     background-color: #ededed;
@@ -27,12 +26,16 @@
 .card-description {
     color: black;
     font-family: Univers Regular;
-    text-overflow: ellipsis;
-    overflow:hidden;
-    white-space:nowrap;
     background-color: rgba(255, 0, 0, 0);
     margin-bottom: 2px;
     text-align: center;
+    line-height: 1.5em;
+    height: 3em; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
 }
 @media only screen and (max-width: 1500px) {
     .card-wrapper {
@@ -43,7 +46,7 @@
         height: 20vw;
     }
     .card-title {
-        font-size: calc(20vw / 14);
+        font-size: calc(20vw / 12);
         width: 20vw;
     }
     .card-description {
@@ -60,7 +63,7 @@
         height: 27vw;
     }
     .card-title {
-        font-size: calc(27vw / 14);
+        font-size: calc(27vw / 12);
         width: 27vw;
     }
     .card-description {
@@ -77,11 +80,11 @@
         height: 40vw;
     }
     .card-title {
-        font-size: calc(40vw / 14);
+        font-size: calc(40vw / 12);
         width: 40vw;
     }
     .card-description {
-        font-size: calc(40vw / 25);
+        font-size: calc(40vw / 23);
         width: 40vw;
     }
 }
@@ -95,7 +98,7 @@
         margin-bottom: 18px;
     }
     .card-title {
-        font-size: calc(84vw / 14);
+        font-size: calc(84vw / 16);
         width: 84vw;
     }
     .card-description {

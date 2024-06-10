@@ -3,8 +3,8 @@ import { collection, addDoc, serverTimestamp, getDocs, query, where } from "fire
 import { db, storage } from '../../firebase';
 import { useEffect, useState } from "react";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import Index from "../Index";
 import { getElement, removeElementByClass, renderElement } from "../Home";
+import Vibe from "../vibePage/Vibe";
 
 export default function AddCool({ inputs }) {
     const [file, setFile] = useState('');
@@ -12,21 +12,22 @@ export default function AddCool({ inputs }) {
     const [perc, setPerc] = useState(null);
     const [vibeTitlesList, setVibeTitlesList] = useState([]);
     const userID = localStorage.getItem('uid');
+    const [vibeSelected, setVibeSelected] = useState(null);
 
     // add later when quota refreshed - maybe do some other things first !!!
 
-    // useEffect(() => {
-    //     const list = [];
-    //     const createVibesTitlesList = async() => {
-    //         const q = query(collection(db, "vibes"), where("uid", "==", userID));
-    //         const querySnapshot = await getDocs(q);
-    //         querySnapshot.forEach((doc) => {
-    //             list.push(doc.data().vibeTitle);
-    //             console.log(doc.data().vibeTitle)
-    //         })}
-    //     createVibesTitlesList();
-    //     setVibeTitlesList(list);
-    // }, [vibeTitlesList])
+    useEffect(() => {
+        const list = [];
+        const createVibesTitlesList = async() => {
+            const q = query(collection(db, "vibes"), where("uid", "==", userID));
+            const querySnapshot = await getDocs(q);
+            querySnapshot.forEach((doc) => {
+                list.push(doc.data().vibeTitle);
+                console.log(doc.data().vibeTitle)
+            })}
+        createVibesTitlesList();
+        setVibeTitlesList(list);
+    }, [])
 
     useEffect(() => {
         const uploadFile = () => {
@@ -75,18 +76,28 @@ export default function AddCool({ inputs }) {
             await addDoc(collection(db, "cools"), {
                 ...data,
                 uid: userID,
-                timeStamp: serverTimestamp()
+                timeStamp: serverTimestamp(),
+                vibe: vibeSelected
               });
               // open vibe page
+              const q = query(collection(db, "vibes"), where("vibeTitle", "==", vibeSelected));
+              const querySnapshot = await getDocs(q);
+              const vibeData = [];
+              querySnapshot.forEach((doc) => {
+                  vibeData.push(doc.data());
+              });
+              console.log(vibeData[0]);
+              const vibePage = <Vibe data={vibeData[0]}></Vibe>;
               const app = getElement("App");
-              renderElement(app, <Index></Index>);
+              renderElement(app, vibePage);
               removeElementByClass('popup-overlay');
         }catch(err){
             console.log(err);
         }
     }
-
-    // bad effect loop - infinite loop: FIX!
+    const handleChange = (e) => {
+        setVibeSelected(e.target.value);
+    }
     
     return (
         <Popup trigger=
@@ -101,7 +112,7 @@ export default function AddCool({ inputs }) {
                             <h1 className='upload-new-cool'>ADD NEW COOL</h1>
                             <div className="inputs">
                                 <div className='input-section'>
-                                    <label className='upload-new-label' for="cover-image">IMAGE</label>
+                                    <label className='upload-new-label' for="cover-image">IMAGE *</label>
                                     <input className='upload-new-input' id='cover-image' name='cover-image' type='file' onChange={
                                         (e) => {
                                             setFile(e.target.files[0])
@@ -109,8 +120,9 @@ export default function AddCool({ inputs }) {
                                     }></input>
                                 </div>
                                     <div className='input-section'>
-                                    <label className='upload-new-label' for="vibe-dropdown">VIBE</label>
-                                    <select id='vibe-dropdown' name='vibe-dropdown'>
+                                    <label className='upload-new-label' for="vibe-dropdown">VIBE *</label>
+                                    <select id='vibe-dropdown' name='vibe-dropdown' onChange={handleChange}>
+                                        <option value="" selected disabled hidden>Select vibe...</option>
                                         {vibeTitlesList.map((title) => (
                                             <option>{title}</option>
                                         ))}
@@ -129,7 +141,7 @@ export default function AddCool({ inputs }) {
                                     </div>
                                 ))}
                             </div>
-                            <button disabled={perc !== null && perc < 100} className='upload-button' type='submit'>ADD COOL</button>
+                            <button disabled={vibeSelected == null || (perc !== null && perc < 100)} className='upload-button' type='submit'>ADD COOL</button>
                             <div className='close' onClick={() => close()}>Close</div>
                         </form>
                         </div>
