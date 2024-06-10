@@ -18,7 +18,7 @@
 .card-title {
     color: black;
     font-family: Windsor;
-    text-overflow: clip;
+    text-overflow: ellipsis;
     overflow:hidden;
     white-space:nowrap;
     background-color: rgba(255, 0, 0, 0);
@@ -27,11 +27,12 @@
 .card-description {
     color: black;
     font-family: Univers Regular;
-    text-overflow: clip;
+    text-overflow: ellipsis;
     overflow:hidden;
     white-space:nowrap;
     background-color: rgba(255, 0, 0, 0);
     margin-bottom: 2px;
+    text-align: center;
 }
 @media only screen and (max-width: 1500px) {
     .card-wrapper {
@@ -80,7 +81,7 @@
         width: 40vw;
     }
     .card-description {
-        font-size: calc(40vw / 21);
+        font-size: calc(40vw / 25);
         width: 40vw;
     }
 }
@@ -98,7 +99,7 @@
         width: 84vw;
     }
     .card-description {
-        font-size: calc(84vw / 26);
+        font-size: calc(84vw / 30);
         margin-bottom: 8px;
         width: 84vw;
     }

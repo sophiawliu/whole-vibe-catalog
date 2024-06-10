@@ -49,7 +49,7 @@
         gap: 40px;
     }
     .vibe-title {
-        font-size: 70px;
+        font-size: 5vw;
         margin-bottom: 18px;
     }
     .vibe-description {
@@ -79,7 +79,7 @@
         gap: 30px;
     }
     .vibe-title {
-        font-size: 55px;
+        font-size: 5vw;
         margin-bottom: 15px;
     }
     .vibe-description {
@@ -109,7 +109,7 @@
         gap: 20px;
     }
     .vibe-title {
-        font-size: 40px;
+        font-size: 5vw;
         margin-bottom: 10px;
     }
     .vibe-description {
@@ -139,7 +139,7 @@
         gap: 15px;
     }
     .vibe-title {
-        font-size: 34px;
+        font-size: 5.2vw;
         margin-bottom: 8px;
     }
     .vibe-description {
