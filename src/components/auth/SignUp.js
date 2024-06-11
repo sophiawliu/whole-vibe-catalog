@@ -20,7 +20,20 @@ function SignUp() {
         createUserWithEmailAndPassword(auth, email, password)
             .then((useCredential) => {
             }).catch((error) => {
-                console.log(error);
+                if (error.code == 'auth/email-already-in-use') {
+                    const messageContainer = getElement('message-container');
+                    const message = <div className='message'>
+                        User exists. Log in instead.
+                    </div>
+                    renderElement(messageContainer, message);
+                }
+                if (error.code == 'auth/invalid-email') {
+                    const messageContainer = getElement('message-container');
+                    const message = <div className='message'>
+                        Invalid email.
+                    </div>
+                    renderElement(messageContainer, message);
+                }
             })
     }
 
@@ -35,6 +48,7 @@ function SignUp() {
                 <input className='login-input' type="password" id="password" name="password" value={password} onChange={(e)=>setPassword(e.target.value)}></input><br></br>
 
                 <div className="submit-container">
+                    <div className='message-container'></div>
                     <button className="submit" type="submit" onClick={signUp}>SIGN UP</button>
                 </div>
 

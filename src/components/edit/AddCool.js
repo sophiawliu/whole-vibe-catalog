@@ -23,7 +23,6 @@ export default function AddCool({ inputs }) {
             const querySnapshot = await getDocs(q);
             querySnapshot.forEach((doc) => {
                 list.push(doc.data().vibeTitle);
-                console.log(doc.data().vibeTitle)
             })}
         createVibesTitlesList();
         setVibeTitlesList(list);
@@ -70,27 +69,43 @@ export default function AddCool({ inputs }) {
         setData({ ...data, [id]: value });
     }
 
+    // const vibeTitleToID = (vibeTitle) => {
+    //     try{
+    //     const q = query(collection(db, "vibes"), where("vibeTitle", "==", vibeTitle));
+    //     const querySnapshot = await getDocs(q);
+    //     const vibeData = [];
+    //     querySnapshot.forEach((doc) => {
+    //         vibeData.push(doc.data());
+    //     });
+    //     return vibeData[0].id;
+    // }catch(err) {
+    //     console.log(err);
+    // }
+    // }
+
     const handleAddCool = async(e) => {
         e.preventDefault();
         try{
+            // open vibe page
+            const q = query(collection(db, "vibes"), where("vibeTitle", "==", vibeSelected));
+            const querySnapshot = await getDocs(q);
+            const vibeData = [];
+            const vibeIDs = [];
+            querySnapshot.forEach((doc) => {
+                vibeData.push(doc.data());
+                vibeIDs.push(doc.id);
+            });
+            console.log('HERE',vibeIDs);
+            const vibePage = <Vibe data={vibeData[0]}></Vibe>;
             await addDoc(collection(db, "cools"), {
                 ...data,
                 uid: userID,
                 timeStamp: serverTimestamp(),
-                vibe: vibeSelected
-              });
-              // open vibe page
-              const q = query(collection(db, "vibes"), where("vibeTitle", "==", vibeSelected));
-              const querySnapshot = await getDocs(q);
-              const vibeData = [];
-              querySnapshot.forEach((doc) => {
-                  vibeData.push(doc.data());
-              });
-              console.log(vibeData[0]);
-              const vibePage = <Vibe data={vibeData[0]}></Vibe>;
-              const app = getElement("App");
-              renderElement(app, vibePage);
-              removeElementByClass('popup-overlay');
+                vibeID: vibeIDs[0]
+            });
+            const app = getElement("App");
+            renderElement(app, vibePage);
+            removeElementByClass('popup-overlay');
         }catch(err){
             console.log(err);
         }
@@ -107,12 +122,12 @@ export default function AddCool({ inputs }) {
             close => (
                 <div className='modal'>
                     <div className="Edit">
-                        <form className='upload-form' onSubmit={handleAddCool}>
+                        <form className='upload-form' onSubmit={handleAddCool} autocomplete="off">
                             <div className='x-button' onClick={() => close()}>✕</div>
                             <h1 className='upload-new-cool'>ADD NEW COOL</h1>
                             <div className="inputs">
                                 <div className='input-section'>
-                                    <label className='upload-new-label' for="cover-image">IMAGE *</label>
+                                    <label className='upload-new-label' for="cover-image">IMAGE <span className="asterisk">*</span></label>
                                     <input className='upload-new-input' id='cover-image' name='cover-image' type='file' onChange={
                                         (e) => {
                                             setFile(e.target.files[0])
@@ -120,7 +135,7 @@ export default function AddCool({ inputs }) {
                                     }></input>
                                 </div>
                                     <div className='input-section'>
-                                    <label className='upload-new-label' for="vibe-dropdown">VIBE *</label>
+                                    <label className='upload-new-label' for="vibe-dropdown">VIBE <span className="asterisk">*</span></label>
                                     <select id='vibe-dropdown' name='vibe-dropdown' onChange={handleChange}>
                                         <option value="" selected disabled hidden>Select vibe...</option>
                                         {vibeTitlesList.map((title) => (
@@ -142,7 +157,7 @@ export default function AddCool({ inputs }) {
                                 ))}
                             </div>
                             <button disabled={vibeSelected == null || (perc !== null && perc < 100)} className='upload-button' type='submit'>ADD COOL</button>
-                            <div className='close' onClick={() => close()}>Close</div>
+                            <div className='close' onClick={() => close()}>Cancel</div>
                         </form>
                         </div>
                 </div>

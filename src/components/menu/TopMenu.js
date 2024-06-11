@@ -19,7 +19,6 @@ export default function TopMenu({ playlist, prevPage, nextPage, arrowColor, topM
         const topMenu = <TopMenu playlist={playlist} topMenuColor={topMenuColor} prevPage={prevPage} nextPage={nextPage} arrowColor={arrowColor} ></TopMenu>;
         renderElement(topMenuContainer, topMenu);
         const bottomMenuContainer = getElement('bottom-menu-container');
-        console.log('MEOWSA', playlist)
         const bottomMenu = <BottomMenu playlist={playlist} prevPage={prevPage} nextPage={nextPage} arrowColor={arrowColor}></BottomMenu>;
         renderElement(bottomMenuContainer, bottomMenu);
     }

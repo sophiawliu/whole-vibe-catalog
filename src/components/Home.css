@@ -109,6 +109,8 @@ input {
     justify-content: center;
     background-color: #70ACBF;
     margin-top: 10px;
+    flex-direction: column;
+    gap: 5px;
 }
 .submit {
     background-color:#70ACBF;
@@ -136,6 +138,14 @@ a {
     flex-direction: column;
     align-items: center;
     background-color: #70ACBF;
+}
+.message {
+    font-size: 12px;
+    font-family: Univers Regular;
+    text-align: center;
+    background-color: #70ACBF;
+    color:firebrick;
+    padding-bottom: 6px;
 }
 .already-have {
     margin-top: 10px;

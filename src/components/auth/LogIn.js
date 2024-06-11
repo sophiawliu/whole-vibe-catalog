@@ -29,7 +29,13 @@ function LogIn() {
                 localStorage.setItem('uid', useCredential.user.uid);
                 showCover();
             }).catch((error) => {
-                console.log(error);
+                if (error.code == 'auth/invalid-credential') {
+                    const messageContainer = getElement('message-container');
+                    const message = <div className='message'>
+                        Wrong email or password.
+                    </div>
+                    renderElement(messageContainer, message);
+                }
             })
     }
 
@@ -44,6 +50,7 @@ function LogIn() {
                 <input className='login-input' type="password" id="password" name="password" value={password} onChange={(e)=>setPassword(e.target.value)}></input><br></br>
 
                 <div className="submit-container">
+                    <div className='message-container'></div>
                     <button className="submit" type="submit" onClick={logIn}>LOG IN</button>
                 </div>
 

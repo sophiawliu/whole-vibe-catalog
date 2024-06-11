@@ -15,6 +15,7 @@
     padding-bottom: 5vh;
     padding-left: 12px;
     padding-right: 12px;
+    cursor: pointer;
 }
 .vibe-title-desc {
     display: flex;
@@ -43,6 +44,28 @@
     font-family: Univers Cn Regular;
     color: #a5a5a5;
 }
+.title-container {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    background-color: #a5a5a500;
+    color: #a5a5a500;
+}
+.edit-vibe-container {
+    height: fit-content;
+}
+.popup-option {
+    font-family: Univers Regular;
+    font-size: 16px;
+    cursor: pointer;
+    color: #afcbd3;
+    background-color: rgba(255, 0, 0, 0);
+    height: fit-content;
+}
+.popup-option:hover {
+    color: #70ACBF;
+    text-decoration: underline;
+}
 @media only screen and (max-width: 1500px) {
     .vibe-title-desc {
         width: calc(80vw - 240px - 40px);
@@ -53,10 +76,10 @@
     }
     .vibe-title {
         font-size: 5vw;
-        margin-bottom: 18px;
     }
     .vibe-description {
         font-size: 20px;
+        margin-top: 18px;
         margin-bottom:  18px;
     }
     .vibe-date {
@@ -73,7 +96,7 @@
         width: 80vw;
         background-color: #a5a5a500;
         position: fixed;
-        bottom: 0px;
+        bottom: 4px;
         left: 10vw;
     }
     .cools-gallery {
@@ -91,10 +114,10 @@
     }
     .vibe-title {
         font-size: 5vw;
-        margin-bottom: 15px;
     }
     .vibe-description {
         font-size: 18px;
+        margin-top: 15px;
         margin-bottom: 15px;
     }
     .vibe-date {
@@ -111,7 +134,7 @@
         width: 80vw;
         background-color: #a5a5a500;
         position: fixed;
-        bottom: 0px;
+        bottom: 4px;
         left: 10vw;
     }
     .cools-gallery {
@@ -128,10 +151,10 @@
     }
     .vibe-title {
         font-size: 5vw;
-        margin-bottom: 10px;
     }
     .vibe-description {
         font-size: 16px;
+        margin-top: 10px;
         margin-bottom: 10px;
     }
     .vibe-date {
@@ -148,7 +171,7 @@
         width: 80vw;
         background-color: #a5a5a500;
         position: fixed;
-        bottom: 0px;
+        bottom: 4px;
         left: 10vw;
     }
     .cools-gallery {
@@ -157,7 +180,7 @@
 }
 @media only screen and (max-width: 600px) {
     .vibe-title-desc {
-        width: calc(90vw - 120px - 15px);
+        width: calc(80vw - 120px - 15px);
         height: 120px;
     }
     .vibe-header {
@@ -165,10 +188,10 @@
     }
     .vibe-title {
         font-size: 6.2vw;
-        margin-bottom: 8px;
     }
     .vibe-description {
         font-size: 14px;
+        margin-top: 8px;
         margin-bottom: 8px;
     }
     .vibe-date {
@@ -179,17 +202,17 @@
         height: 120px;
     }
     .vibe-page {
-        width: 90vw;
+        width: 80vw;
     }
     iframe {
-        width: 90vw;
+        width: 80vw;
         background-color: #a5a5a500;
         position: fixed;
-        bottom: 0px;
-        left: 5vw;
+        bottom: 4px;
+        left: 10vw;
     }
     .cools-gallery {
-        width: 90vw;
+        width: 80vw;
     }
 }
 .bottom-menu-container {

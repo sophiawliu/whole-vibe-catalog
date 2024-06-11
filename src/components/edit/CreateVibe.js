@@ -69,6 +69,10 @@ export default function CreateVibe({ inputs }) {
             console.log(err);
         }
     }
+    const [title, setTitle] = useState('');
+    const handleChange = (e) => {
+        setTitle(e.target.value);
+    }
 
     return (
         <Popup trigger=
@@ -78,10 +82,19 @@ export default function CreateVibe({ inputs }) {
             close => (
                 <div className='modal'>
                     <div className="Edit">
-                        <form className='upload-form' onSubmit={handleCreateVibe}>
+                        <form className='upload-form' onSubmit={handleCreateVibe} autocomplete="off">
                             <div className='x-button' onClick={() => close()}>✕</div>
                             <h1 className='upload-new-cool'>CREATE NEW VIBE</h1>
                             <div className="inputs">
+                                    <div className="input-section" key='vibeTitle'>
+                                        <label className='upload-new-label' for='vibeTitle'>TITLE <span className="asterisk">*</span></label>
+                                        <input
+                                            className="upload-new-input"
+                                            id='vibeTitle'
+                                            type='text'
+                                            onChange={handleChange}
+                                        />
+                                    </div>
                                 {inputs.map((input) => (
                                     <div className="input-section" key={input.id}>
                                         <label className='upload-new-label' for={input.id}>{input.label}</label>
@@ -104,8 +117,8 @@ export default function CreateVibe({ inputs }) {
                                 </div>
 
                             </div>
-                            <button disabled={perc !== null && perc < 100} className='upload-button' type='submit'>CREATE VIBE</button>
-                            <div className='close' onClick={() => close()}>Close</div>
+                            <button disabled={(perc !== null && perc < 100) || title == ''} className='upload-button' type='submit'>CREATE VIBE</button>
+                            <div className='close' onClick={() => close()}>Cancel</div>
                         </form>
                         </div>
                 </div>

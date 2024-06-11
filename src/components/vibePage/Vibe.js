@@ -4,6 +4,7 @@ import CoolCard from "./CoolCard";
 import BottomMenu from "../menu/BottomMenu";
 import './Vibe.css';
 import { useState, useEffect } from "react";
+import { getElement, removeElementByClass, renderElement } from '../Home';
 import {
     collection,
     getDocs,
@@ -12,7 +13,7 @@ import {
     onSnapshot,
   } from "firebase/firestore";
 import {db} from '../../firebase';
-
+import EditVibe from './EditVibe';
 
 export default function Vibe({ data }) {
     const image = data.img;
@@ -35,8 +36,8 @@ export default function Vibe({ data }) {
               let list = [];
               snapShot.docs.forEach((doc) => {
                   const uid = doc._document.data.value.mapValue.fields.uid.stringValue;
-                  const vibe = doc._document.data.value.mapValue.fields.vibe.stringValue;
-                  if (uid === userID && vibe === data.vibeTitle) {
+                  const vibeID = doc._document.data.value.mapValue.fields.vibeID.stringValue;
+                  if (uid === userID && vibeID === data.id) {
                     list.push({ id: doc.id, ...doc.data() });
                   }
               });
@@ -44,7 +45,7 @@ export default function Vibe({ data }) {
                 return a.timeStamp - b.timeStamp;
             })
               setCools(list);
-              console.log(list);
+            //   console.log(list);
             },
             (error) => {
               console.log(error);
@@ -56,6 +57,15 @@ export default function Vibe({ data }) {
           };
         }, []);
 
+    // function showEditPopUp() {
+    //     const editContainer = getElement('edit-vibe-container');
+    //     const editVibeDiv = <EditVibe currentVibe={data}></EditVibe>;
+    //     renderElement(editContainer, editVibeDiv);
+    // }
+    // function hideEditPopUp() {
+    //     // removeElementByClass('popup-option');
+    // }
+
     return (
         <div className="Vibe">
             <div className='top-menu-container'>
@@ -65,7 +75,10 @@ export default function Vibe({ data }) {
                 <div className="vibe-header">
                     {image ? <img className='vibe-image' src={data.img} alt={data.vibeTitle}></img> : <img className='vibe-image' src={'default-cover.png'} alt={data.vibeTitle}></img>}
                     <div className="vibe-title-desc">
-                        <h1 className='vibe-title'>{title}</h1>
+                        <div className="title-container">
+                            <h1 className='vibe-title'>{title}</h1>
+                            <div className="edit-vibe-container">        <EditVibe currentVibe={data}></EditVibe></div>
+                        </div>
                         <div className="vibe-description">{description}</div>
                         <div className="vibe-date">CREATED {timeCreated}</div>
                     </div>

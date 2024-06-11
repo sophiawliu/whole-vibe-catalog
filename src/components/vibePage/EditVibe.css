@@ -77,7 +77,7 @@
     width: 500px;
 }
 .popup-overlay {
-    background-color: #70adbfad;
+    background-color: #70adbfbb;
 }
 .upload-new-cool {
     margin: 0 0 1vh 0;
@@ -122,7 +122,7 @@
     font-family: Univers Bold;
     font-size: 16px;
     height: 32px;
-    width: fit-content;
+    width: 130px;
     text-align: center;
     cursor: pointer;
     margin-top: 1vh;
@@ -187,18 +187,11 @@ select {
     color: black;
     text-decoration: underline;
 }
-.x-button {
-    color: #0000007f;
-    position: absolute;
-    top: 14px;
-    right: 16px;
-    font-size: 14px;
-    font-family: Univers Regular;
-    cursor: pointer;
-}
 .x-button:hover {
     color: black;
 }
-.asterisk {
-    color: firebrick;
+.test {
+    width: 50vw;
+    height: 50vh;
+    background-color: aqua;
 }
