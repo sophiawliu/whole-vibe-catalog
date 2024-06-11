@@ -1,12 +1,12 @@
 import './CoolCard.css';
-import Vibe from '../vibePage/Vibe';
-import { getElement, renderElement } from '../Home'
+import CoolPopUp from './CoolPopUp';
+import { removeElementByClass, getElement, renderElement } from '../Home'
 
-export default function VibeCard({ data }) {
+export default function CoolCard({ data }) {
     function openCool() {
-        // const vibePage = <Vibe data={data}></Vibe>;
-        // const app = getElement("App");
-        // renderElement(app, vibePage);
+        const coolPopUp = <CoolPopUp cool={data}></CoolPopUp>;
+        const coolPopUpContainer = getElement('cool-popup-container');
+        renderElement(coolPopUpContainer, coolPopUp);
     }
     const timeCreated = data.timeStamp && data.timeStamp.toDate().toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"}).toUpperCase(); // change to last time edited
     return (

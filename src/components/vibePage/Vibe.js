@@ -42,7 +42,7 @@ export default function Vibe({ data }) {
                   }
               });
             list.sort(function(a, b) { 
-                return a.timeStamp - b.timeStamp;
+                return b.timeStamp - a.timeStamp;
             })
               setCools(list);
             //   console.log(list);
@@ -57,17 +57,9 @@ export default function Vibe({ data }) {
           };
         }, []);
 
-    // function showEditPopUp() {
-    //     const editContainer = getElement('edit-vibe-container');
-    //     const editVibeDiv = <EditVibe currentVibe={data}></EditVibe>;
-    //     renderElement(editContainer, editVibeDiv);
-    // }
-    // function hideEditPopUp() {
-    //     // removeElementByClass('popup-option');
-    // }
-
     return (
         <div className="Vibe">
+            <div className="cool-popup-container"></div>
             <div className='top-menu-container'>
                 <TopMenu playlist={iframeDiv} prevPage={<Index></Index>} nextPage={null} arrowColor='black' topMenuColor='black'></TopMenu>
             </div>
@@ -77,7 +69,7 @@ export default function Vibe({ data }) {
                     <div className="vibe-title-desc">
                         <div className="title-container">
                             <h1 className='vibe-title'>{title}</h1>
-                            <div className="edit-vibe-container">        <EditVibe currentVibe={data}></EditVibe></div>
+                            <EditVibe currentVibe={data}></EditVibe>
                         </div>
                         <div className="vibe-description">{description}</div>
                         <div className="vibe-date">CREATED {timeCreated}</div>

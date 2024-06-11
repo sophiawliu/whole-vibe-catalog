@@ -5,7 +5,6 @@
 .vibe-page {
     background-color: white;
     position: absolute;
-    z-index: 0;
     padding: 10vh 0 10vh 0;
     width: 80vw;
 }
@@ -15,7 +14,6 @@
     padding-bottom: 5vh;
     padding-left: 12px;
     padding-right: 12px;
-    cursor: pointer;
 }
 .vibe-title-desc {
     display: flex;
@@ -25,6 +23,14 @@
 .vibe-image {
     object-fit: cover;
     border-radius: 8px;
+}
+.title-container {
+    background-color: #a5a5a500;
+    color: #a5a5a500;
+    display: flex;
+    align-items: baseline;
+    justify-content: left;
+    gap: 12px;
 }
 .vibe-title {
     color: black;
@@ -44,28 +50,47 @@
     font-family: Univers Cn Regular;
     color: #a5a5a5;
 }
-.title-container {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    background-color: #a5a5a500;
-    color: #a5a5a500;
-}
-.edit-vibe-container {
-    height: fit-content;
-}
 .popup-option {
     font-family: Univers Regular;
     font-size: 16px;
     cursor: pointer;
     color: #afcbd3;
-    background-color: rgba(255, 0, 0, 0);
     height: fit-content;
+    display: none;
+    background-color: #a5a5a500;
+    width: fit-content;
 }
 .popup-option:hover {
     color: #70ACBF;
     text-decoration: underline;
 }
+.vibe-header:hover .popup-option {
+    display: block;
+}
+
+/* for edit cool */
+.popup-option-cool {
+    font-family: Univers Regular;
+    font-size: 16px;
+    cursor: pointer;
+    color: #0000007f;
+    ;
+    height: fit-content;
+    display: none;
+    background-color: #a5a5a500;
+    width: fit-content;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+}
+.popup-option-cool:hover {
+    color: black;
+    text-decoration: underline;
+}
+.image-wrapper:hover .popup-option-cool {
+    display: block;
+}
+
 @media only screen and (max-width: 1500px) {
     .vibe-title-desc {
         width: calc(80vw - 240px - 40px);
@@ -78,7 +103,7 @@
         font-size: 5vw;
     }
     .vibe-description {
-        font-size: 20px;
+        font-size: 18px;
         margin-top: 18px;
         margin-bottom:  18px;
     }
@@ -191,7 +216,7 @@
     }
     .vibe-description {
         font-size: 14px;
-        margin-top: 8px;
+        margin-top: 0px;
         margin-bottom: 8px;
     }
     .vibe-date {

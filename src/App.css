@@ -1,1 +1,8 @@
 
+::-moz-selection { /* Code for Firefox */
+    background: #ffe345;
+  }
+  
+  ::selection {
+    background: #ffe345;
+  }

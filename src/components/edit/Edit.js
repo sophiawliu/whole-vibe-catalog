@@ -11,8 +11,8 @@ function Edit() {
         const editSubcontainer = <div className='edit-subcontainer'>
             <div className='edit-options-container'>
                 <div className='edit-options'>
-                    <CreateVibe inputs={createVibeInputs}></CreateVibe>
                     <AddCool inputs={addCoolInputs}></AddCool>
+                    <CreateVibe inputs={createVibeInputs}></CreateVibe>
                 </div>
             </div>
             <div className='edit-button' onClick={hideEditOptions}>

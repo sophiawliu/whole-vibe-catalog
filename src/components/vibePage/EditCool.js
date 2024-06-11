@@ -5,11 +5,10 @@ import { useEffect, useState } from "react";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { getElement, removeElementByClass, renderElement } from "../Home";
 import Vibe from "./Vibe";
-import Index from "../Index";
 
-export default function EditVibe({ currentVibe }) {
+export default function EditCool({ currentCool }) {
     const [file, setFile] = useState('');
-    const [data, setData] = useState(currentVibe);
+    const [data, setData] = useState(currentCool);
     const [perc, setPerc] = useState(null);
     const userID = localStorage.getItem('uid');
 
@@ -57,42 +56,39 @@ export default function EditVibe({ currentVibe }) {
     const handleEdit = async(e) => {
         e.preventDefault();
         try{
-            updateDoc(doc(db, 'vibes', currentVibe.id), {
+            updateDoc(doc(db, 'cools', currentCool.id), {
                 ...data
             })
             const list = [];
-            const q = query(collection(db, "vibes"), where("id", "==", currentVibe.id));
+            const q = query(collection(db, "cools"), where("id", "==", currentCool.id));
             const querySnapshot = await getDocs(q);
             querySnapshot.forEach((doc) => {
                 list.push(doc.data());
             })
-            const vibePage = <Vibe data={list[0]}></Vibe>;
-            const app = getElement("App");
-            renderElement(app, vibePage);
             removeElementByClass('popup-overlay');
+            removeElementByClass('cool-overlay');
         }catch(err){
             console.log(err);
         }
     }
 
-    const deleteVibe = async(e) => {
+    const deleteCool = async(e) => {
         e.preventDefault();
         try{
-            const res = await deleteDoc(doc(db, "vibes", currentVibe.id));
-            const app = getElement("App");
+            const res = await deleteDoc(doc(db, "cools", currentCool.id));
             removeElementByClass('popup-overlay');
-            renderElement(app, <Index></Index>);
+            removeElementByClass('cool-overlay');
         }catch(err){
             console.log(err);
         }
     }
     const areYouSure = () => {
         const closeContainer = getElement('close-container');
-        const deleteVibeButton = <div className='close' onClick={areYouSure}>Delete Vibe</div>;
+        const deleteCoolButton = <div className='close' onClick={areYouSure}>Delete Cool</div>;
         const confirmDiv = <div className="confirm-div-container">
-            <div className="confirm-div-q">Delete this Vibe?</div>
-            <div className="confirm-div" onClick={deleteVibe}>YES</div>
-            <div className="confirm-div" onClick={() => {renderElement(closeContainer, deleteVibeButton);}
+            <div className="confirm-div-q">Delete this Cool?</div>
+            <div className="confirm-div" onClick={deleteCool}>YES</div>
+            <div className="confirm-div" onClick={() => {renderElement(closeContainer, deleteCoolButton);}
             }>NO</div>
         </div>;
         renderElement(closeContainer, confirmDiv);
@@ -100,7 +96,7 @@ export default function EditVibe({ currentVibe }) {
 
     return (
         <Popup trigger=
-        {<div className="popup-option">Edit</div>}
+        {<div className="popup-option-cool">Edit</div>}
         modal nested>
         {
             close => (
@@ -108,7 +104,7 @@ export default function EditVibe({ currentVibe }) {
                     <div className="Edit">
                         <form className='upload-form' onSubmit={handleEdit} autocomplete="off">
                             <div className='x-button' onClick={() => close()}>✕</div>
-                            <h1 className='upload-new-cool'>EDIT VIBE</h1>
+                            <h1 className='upload-new-cool'>EDIT COOL</h1>
                             <div className="inputs">
                                 <div className='input-section'>
                                     <label className='upload-new-label' for="cover-image">UPLOAD NEW IMAGE</label>
@@ -123,40 +119,40 @@ export default function EditVibe({ currentVibe }) {
                                     }>
                                     </input>
                                 </div>
-                                <div className="input-section" key='vibeTitle'>
-                                    <label className='upload-new-label' for='vibeTitle'>EDIT TITLE</label>
+                                <div className="input-section" key='coolTitle'>
+                                    <label className='upload-new-label' for='coolTitle'>EDIT TITLE</label>
                                     <input
                                         className="upload-new-input"
-                                        id='vibeTitle'
+                                        id='coolTitle'
                                         type='text'
                                         onChange={handleInput}
-                                        defaultValue={currentVibe.vibeTitle}
+                                        defaultValue={currentCool.coolTitle}
                                     />
                                 </div>
-                                <div className="input-section" key='vibeDescription'>
-                                    <label className='upload-new-label' for='vibeTitle'>EDIT DESCRIPTION</label>
+                                <div className="input-section" key='coolNotes'>
+                                    <label className='upload-new-label' for='coolTitle'>EDIT DESCRIPTION</label>
                                     <input
                                         className="upload-new-input"
-                                        id='vibeDescription'
+                                        id='coolNotes'
                                         type='text'
-                                        defaultValue={currentVibe.vibeDescription}
+                                        defaultValue={currentCool.coolNotes}
                                         onChange={handleInput}
                                     />
                                 </div>
-                                <div className="input-section" key='vibePlaylist'>
-                                    <label className='upload-new-label' for='vibePlaylist'>NEW SPOTIFY PLAYLIST</label>
+                                <div className="input-section" key='coolLink'>
+                                    <label className='upload-new-label' for='coolLink'>NEW LINK</label>
                                     <input
                                         className="upload-new-input"
-                                        id='vibePlaylist'
+                                        id='coolLink'
                                         type='url'
-                                        defaultValue={currentVibe.vibePlaylist}
+                                        defaultValue={currentCool.coolLink}
                                         onChange={handleInput}
                                     />
                                 </div>
                             </div>
                             <button disabled={perc !== null && perc < 100} className='upload-button' type='submit'>SAVE</button>
                             <div className="close-container">
-                                <div className='close' onClick={areYouSure}>Delete Vibe</div>
+                                <div className='close' onClick={areYouSure}>Delete Cool</div>
                             </div>
                         </form>
                         </div>

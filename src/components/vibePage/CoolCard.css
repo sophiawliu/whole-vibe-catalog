@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
-    margin-bottom: 16px;
+    margin-bottom: 0px;
 }
 .cool-link:hover {
     color: #70ACBF;
