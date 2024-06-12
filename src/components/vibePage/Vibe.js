@@ -32,25 +32,43 @@ export default function Vibe({ data }) {
     const userID = localStorage.getItem('uid');
 
     useEffect(() => {
+        // const unsub = onSnapshot(
+        //     collection(db, "cools"),
+        //     (snapShot) => {
+        //       let list = [];
+        //       snapShot.docs.forEach((doc) => {
+        //         //   const uid = doc._document.data.value.mapValue.fields.uid.stringValue;
+        //         //   const vibeID = doc._document.data.value.mapValue.fields.vibeID.stringValue;
+        //         //   if (uid === userID && vibeID === data.id) {
+        //         //     list.push({ id: doc.id, ...doc.data() });
+        //         //   }
+        //         console.log(data.id);
+        //         console.log(doc.vibeID);
+        //         if (data.id == doc.vibeID) {
+        //             list.push({ id: doc.id, ...doc.data() });
+        //         }
+        //       });
+        //     list.sort(function(a, b) { 
+        //         return b.timeStamp - a.timeStamp;
+        //     })
+        //     setCools(list);
+        //     console.log('THE COOLS',list);
+        //     },
+        //     (error) => {
+        //       console.log(error);
+        //     }
+        //   );
+
         const unsub = onSnapshot(
             collection(db, "cools"),
             (snapShot) => {
               let list = [];
               snapShot.docs.forEach((doc) => {
-                //   const uid = doc._document.data.value.mapValue.fields.uid.stringValue;
-                //   const vibeID = doc._document.data.value.mapValue.fields.vibeID.stringValue;
-                //   if (uid === userID && vibeID === data.id) {
-                //     list.push({ id: doc.id, ...doc.data() });
-                //   }
-                if (data.id == doc.vibeID) {
+                  if (data.id === doc.data().vibeID) {
                     list.push({ id: doc.id, ...doc.data() });
-                }
+                  }
               });
-            list.sort(function(a, b) { 
-                return b.timeStamp - a.timeStamp;
-            })
               setCools(list);
-              console.log('THE COOLS',cools);
             },
             (error) => {
               console.log(error);
