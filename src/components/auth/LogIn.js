@@ -42,7 +42,7 @@ function LogIn() {
     return (
         <div className='login-or-signup'>
             <h3 className="login-word">Log In</h3>
-            <form className='signup-login-form' onSubmit={logIn}>
+            <form className='signup-login-form' onSubmit={logIn} autoComplete="off">
                 <label for="email">EMAIL ADDRESS</label><br></br>
                 <input className='login-input' type="email" id="email" name="email" value={email} onChange={(e)=>setEmail(e.target.value)}></input><br></br>
 

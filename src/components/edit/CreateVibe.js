@@ -72,6 +72,7 @@ export default function CreateVibe({ inputs }) {
     const [title, setTitle] = useState('');
     const handleChange = (e) => {
         setTitle(e.target.value);
+        handleInput(e);
     }
 
     return (
@@ -82,7 +83,7 @@ export default function CreateVibe({ inputs }) {
             close => (
                 <div className='modal'>
                     <div className="Edit">
-                        <form className='upload-form' onSubmit={handleCreateVibe} autocomplete="off">
+                        <form className='upload-form' onSubmit={handleCreateVibe} autoComplete="off">
                             <div className='x-button' onClick={() => close()}>✕</div>
                             <h1 className='upload-new-cool'>CREATE NEW VIBE</h1>
                             <div className="inputs">
@@ -109,7 +110,7 @@ export default function CreateVibe({ inputs }) {
                                 ))}
                                 <div className='input-section'>
                                     <label className='upload-new-label' for="cover-image">COVER IMAGE</label>
-                                    <input className='upload-new-input' id='cover-image' name='cover-image' type='file' accept='.png,.jpg,.jpeg' onChange={
+                                    <input className='upload-new-input' id='cover-image' name='cover-image' type='file' accept='.png,.jpg,.jpeg,.webp' onChange={
                                         (e) => {
                                             setFile(e.target.files[0])
                                         }

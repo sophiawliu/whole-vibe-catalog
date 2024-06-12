@@ -102,7 +102,7 @@ export default function EditCool({ currentCool }) {
             close => (
                 <div className='modal'>
                     <div className="Edit">
-                        <form className='upload-form' onSubmit={handleEdit} autocomplete="off">
+                        <form className='upload-form' onSubmit={handleEdit} autoComplete="off">
                             <div className='x-button' onClick={() => close()}>✕</div>
                             <h1 className='upload-new-cool'>EDIT COOL</h1>
                             <div className="inputs">

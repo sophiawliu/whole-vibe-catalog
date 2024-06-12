@@ -3,12 +3,19 @@ import { auth } from '../../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import LogIn from './LogIn';
 import { removeElementByClass, getElement, renderElement } from '../Home';
+import Cover from '../Cover';
 
 function switchToLogIn() {
     const login = <LogIn></LogIn>
     removeElementByClass('login-or-signup');
     const blueEarth = getElement('blue-earth');
     renderElement(blueEarth, login);
+}
+
+function showCover() {
+    const app = getElement('App');
+    const cover = <Cover></Cover>;
+    renderElement(app, cover);
 }
 
 function SignUp() {
@@ -19,6 +26,8 @@ function SignUp() {
         e.preventDefault();
         createUserWithEmailAndPassword(auth, email, password)
             .then((useCredential) => {
+                localStorage.setItem('uid', useCredential.user.uid);
+                showCover();
             }).catch((error) => {
                 if (error.code == 'auth/email-already-in-use') {
                     const messageContainer = getElement('message-container');
@@ -40,7 +49,7 @@ function SignUp() {
     return (
         <div className='login-or-signup'>
             <h3 className="login-word">Sign Up</h3>
-            <form className='signup-login-form' onSubmit={signUp}>
+            <form className='signup-login-form' onSubmit={signUp} autoComplete="off">
                 <label for="email">EMAIL ADDRESS</label><br></br>
                 <input className='login-input' type="email" id="email" name="email" value={email} onChange={(e)=>setEmail(e.target.value)}></input><br></br>
 

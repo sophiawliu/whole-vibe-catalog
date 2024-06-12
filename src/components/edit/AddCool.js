@@ -122,7 +122,7 @@ export default function AddCool({ inputs }) {
             close => (
                 <div className='modal'>
                     <div className="Edit">
-                        <form className='upload-form' onSubmit={handleAddCool} autocomplete="off">
+                        <form className='upload-form' onSubmit={handleAddCool} autoComplete="off">
                             <div className='x-button' onClick={() => close()}>✕</div>
                             <h1 className='upload-new-cool'>ADD NEW COOL</h1>
                             <div className="inputs">
