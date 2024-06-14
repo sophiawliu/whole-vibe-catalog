@@ -1,6 +1,7 @@
 import './Home.css';
 import * as ReactDOM from 'react-dom';
 import SignUp from './auth/SignUp';
+import LogIn from './auth/LogIn';
 
 export function removeElementByClass(className){
     const elements = document.getElementsByClassName(className);
@@ -24,7 +25,7 @@ export default function Home() {
             <h2 className='access-to'>access to cools</h2>
             <div className="login">
                 <div className="blue-earth">
-                    <SignUp></SignUp>
+                    <LogIn></LogIn>
                 </div>
             </div>
             <div className='month-price'>
