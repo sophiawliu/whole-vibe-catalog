@@ -2,6 +2,7 @@ import BottomMenu from './menu/BottomMenu';
 import './Cover.css';
 import FunctionPurpose from './FunctionPurpose';
 import TopMenu from './menu/TopMenu';
+import Username from './menu/Username';
 
 function Cover() {
     return (
@@ -16,8 +17,7 @@ function Cover() {
                 <div className="earth"></div>
             </div>
             <div className='month-price'>
-                <h3>Spring 2024</h3>
-                <h3>$0</h3>
+                <Username></Username>
             </div>
         </div>
         <div className='bottom-menu-container'>

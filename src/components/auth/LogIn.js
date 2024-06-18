@@ -28,6 +28,7 @@ function LogIn() {
             .then((useCredential) => {
                 localStorage.setItem('uid', useCredential.user.uid);
                 showCover();
+                localStorage.setItem('email', useCredential.user.email);
             }).catch((error) => {
                 if (error.code == 'auth/invalid-credential') {
                     const messageContainer = getElement('message-container');

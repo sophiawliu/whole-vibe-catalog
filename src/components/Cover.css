@@ -34,7 +34,11 @@ body {
 h3 {
     font-family: Windsor;
     font-size: 22px;
-    margin: 0 0 10px 0;
+    margin: 0 0 4px 0;
+}
+.belongs-to {
+    font-family: Univers Regular;
+    font-size: 18px;
 }
 .earth {
     width: 360px;
