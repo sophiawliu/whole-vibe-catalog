@@ -37,6 +37,13 @@ function LogIn() {
                     </div>
                     renderElement(messageContainer, message);
                 }
+                if (error.code == 'auth/invalid-email') {
+                    const messageContainer = getElement('message-container');
+                    const message = <div className='message'>
+                        Invalid email.
+                    </div>
+                    renderElement(messageContainer, message);
+                }
             })
     }
 
