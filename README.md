@@ -1,5 +1,6 @@
 # 🌍 WHOLE VIBE CATALOG
-Because you're living in your own Whole Earth Catalog. An application dedicated to the study of Vibeology™️. A Vible (vibe bible), if you will.
+Because [you're living in your own](https://www.youtube.com/watch?v=yXmnmvDl-ao) 
+Whole Earth Catalog. An application dedicated to the study of [Vibeology™️](https://www.youtube.com/watch?v=ib01_vWRpx0). A Vible (vibe bible), if you will.
 
 ![wholeearthcatalog-960x1236](https://github.com/sophiawliu/whole-vibe-catalog/assets/122403050/d0a979e4-ea14-40cb-9770-2decc91d2b9a)
 
