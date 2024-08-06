@@ -29,7 +29,7 @@ export default function Home() {
                 </div>
             </div>
             <div className='month-price'>
-                <h3>Spring 2024</h3>
+                <h3>Summer 2024</h3>
                 <h3>$0</h3>
             </div>
         </div>
